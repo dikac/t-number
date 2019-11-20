@@ -1,6 +1,6 @@
 {
   "name": "t-number",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "Typescript number",
   "dependencies": {
     "@types/node": "^12.11.7",
