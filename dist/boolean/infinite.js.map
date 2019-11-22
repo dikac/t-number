@@ -1,0 +1,1 @@
+{"version":3,"file":"infinite.js","sourceRoot":"","sources":["../../src/boolean/infinite.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,iCAA0B;IAE1B,SAAwB,QAAQ,CAAE,KAAW;QAEzC,IAAG,CAAC,cAAI,CAAC,KAAK,CAAC,EAAE;YAEb,OAAO,KAAK,CAAC;SAChB;QAED,IAAI,KAAK,KAAK,MAAM,CAAC,iBAAiB,IAAI,KAAK,KAAK,MAAM,CAAC,iBAAiB,EAAG;YAE3E,OAAO,IAAI,CAAC;SACf;QAED,OAAO,KAAK,CAAC;IAEjB,CAAC;IAdD,2BAcC"}
