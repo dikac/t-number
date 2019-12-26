@@ -13,6 +13,7 @@
     "strictNullChecks": true,
     "incremental": true,
     "tsBuildInfoFile": "./dist-spec/compiler-cache",
+    "rootDir" : "spec",
     "strictPropertyInitialization": true,
     "lib": [
       "es2016",
@@ -22,8 +23,7 @@
     ]
   },
   "include":  [
-    "spec"
-
+    "spec/**/*"
   ],
   "exclude":   [
   ]
