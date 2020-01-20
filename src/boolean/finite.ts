@@ -1,2 +1,7 @@
-const Finite = isFinite;
-export default <(value : any) => value is number>Finite;
+import Type from "./type";
+
+export default function Finite(value : any) : boolean {
+
+    return Type(value) && isFinite(value);
+}
+

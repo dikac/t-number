@@ -1,2 +1,1 @@
-declare const _default: (value: any) => value is number;
-export default _default;
+export default function Finite(value: any): boolean;

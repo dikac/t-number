@@ -1,1 +1,1 @@
-{"version":3,"file":"finite.js","sourceRoot":"","sources":["../../src/boolean/finite.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,MAAM,MAAM,GAAG,QAAQ,CAAC;IACxB,kBAAiD,MAAM,CAAC"}
+{"version":3,"file":"finite.js","sourceRoot":"","sources":["../../src/boolean/finite.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,iCAA0B;IAE1B,SAAwB,MAAM,CAAC,KAAW;QAEtC,OAAO,cAAI,CAAC,KAAK,CAAC,IAAI,QAAQ,CAAC,KAAK,CAAC,CAAC;IAC1C,CAAC;IAHD,yBAGC"}

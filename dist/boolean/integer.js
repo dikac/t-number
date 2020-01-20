@@ -4,15 +4,18 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./type"], factory);
+        define(["require", "exports", "./finite"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const type_1 = require("./type");
-    function Finite(value) {
-        return type_1.default(value) && isFinite(value);
+    const finite_1 = require("./finite");
+    function Integer(number) {
+        if (finite_1.default(number)) {
+            return number === Math.floor(number);
+        }
+        return false;
     }
-    exports.default = Finite;
+    exports.default = Integer;
 });
-//# sourceMappingURL=finite.js.map
+//# sourceMappingURL=integer.js.map
