@@ -1,1 +1,1 @@
-export default function Integer(number: number): boolean;
+export default function Integer(number: number): number is number;

@@ -1,1 +1,1 @@
-export default function Finite(value: any): boolean;
+export default function Finite(value: any): value is number;
