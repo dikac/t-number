@@ -1,6 +1,6 @@
 import Type from "./type";
 
-export default function IsNan(value : any) : value is number {
+export default function Nan(value : any) : value is number {
 
     if(!Type(value)) {
 
