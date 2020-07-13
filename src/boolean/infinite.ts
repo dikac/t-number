@@ -1,17 +1,13 @@
-import Type from "./type";
 
-export default function Infinite (value : any) : value is number {
+export default function Infinite (number : number) : boolean {
 
-    if(!Type(value)) {
-
-        return false;
-    }
-
-    if (value === Number.POSITIVE_INFINITY || value === Number.NEGATIVE_INFINITY)  {
-
-        return true;
+    switch (number) {
+        case Number.POSITIVE_INFINITY :
+        case Number.NEGATIVE_INFINITY :
+            return true;
     }
 
     return false;
 
 }
+

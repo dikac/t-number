@@ -1,0 +1,1 @@
+{"version":3,"file":"number.js","sourceRoot":"","sources":["../../../src/assert/string/number.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,SAAwB,MAAM,CAAC,KAAe,EAAE,KAAe;QAE3D,IAAI,MAAM,GAAS,KAAM,CAAC,QAAQ,EAAE,CAAC;QAErC,IAAG,KAAK,EAAE;YAEN,OAAO,UAAU,MAAM,aAAa,CAAC;SAExC;aAAM;YAEH,OAAO,UAAU,MAAM,iBAAiB,CAAC;SAC5C;IACL,CAAC;IAZD,yBAYC"}

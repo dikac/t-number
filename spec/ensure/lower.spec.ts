@@ -1,0 +1,73 @@
+import Lower from "../../dist/ensure/lower";
+
+it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
+
+describe(`inclusive`,function() {
+
+    it(`lower with limit`, () => {
+        expect(Lower(0, 1, false)).toBe(0);
+        expect(Lower(0, 10, false)).toBe(0);
+    });
+
+    it(`equal with limit`, () => {
+        expect(Lower(0, 0,true)).toBe(0);
+        expect(Lower(10, 10,true)).toBe(10);
+    });
+
+    it(`greater than limit`, () => {
+        try {
+            Lower(1, 0,true);
+            fail('exception should thrown');
+        } catch (e) {
+            expect(e).toBeInstanceOf(Error);
+        }
+        try {
+            Lower(15, 10,true);
+            fail('exception should thrown');
+        } catch (e) {
+            expect(e).toBeInstanceOf(Error);
+        }
+    });
+});
+
+describe(`exclusive`,function() {
+
+    it(`lower with limit`, () => {
+        expect(Lower(0, 1, false)).toBe(0);
+        expect(Lower(0, 10, false)).toBe(0);
+    });
+
+    it(`equal with limit`, () => {
+        try {
+            Lower(1, 1,false);
+            fail('exception should thrown');
+        } catch (e) {
+            expect(e).toBeInstanceOf(Error);
+        }
+        try {
+            Lower(10, 10,false);
+            fail('exception should thrown');
+        } catch (e) {
+            expect(e).toBeInstanceOf(Error);
+        }
+    });
+
+    it(`greater than limit`, () => {
+        try {
+            Lower(1, 0,false);
+            fail('exception should thrown');
+        } catch (e) {
+            expect(e).toBeInstanceOf(Error);
+        }
+        try {
+            Lower(15, 10,false);
+            fail('exception should thrown');
+        } catch (e) {
+            expect(e).toBeInstanceOf(Error);
+        }
+    });
+});
+
+
+
+

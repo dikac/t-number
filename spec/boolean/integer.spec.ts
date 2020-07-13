@@ -1,23 +1,33 @@
 import Integer from "../../dist/boolean/integer";
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
-describe(`valid`,function() {
 
-    for(let number of [1,2,3,1.0]) {
-
-        it(`for ${number}`, () => expect(Integer(number)).toBeTrue());
-    }
-
+it(`positive integer`, () => {
+    expect(Integer(1)).toBeTrue();
 });
 
-describe(`invalid`,function() {
-
-    for(let number of [1.1,2.01,3.1,1.1]) {
-
-        it(`for ${number}`, () => expect(Integer(number)).toBeFalse());
-    }
+it(`negative integer`, () => {
+    expect(Integer(-1)).toBeTrue();
 });
 
+it(`positive float`, () => {
+    expect(Integer(1.1)).toBeFalse();
+});
 
+it(`negative float`, () => {
+    expect(Integer(-1.1)).toBeFalse();
+});
+
+it(`positive infinity`, () => {
+    expect(Integer(Infinity)).toBeFalse();
+});
+
+it(`negative infinity`, () => {
+    expect(Integer(-Infinity)).toBeFalse();
+});
+
+it(`Nan`, () => {
+    expect(Integer(NaN)).toBeFalse();
+});
 

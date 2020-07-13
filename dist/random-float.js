@@ -4,36 +4,38 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "./boolean/greater", "./boolean/lower"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function RandomFloat(minimum, maximum, precision) {
-        if (maximum === undefined) {
-            maximum = minimum;
-            minimum = 0;
-        }
-        if (precision !== undefined && precision < 0) {
-            throw new Error(`precision must greater than 0`);
-        }
+    const greater_1 = require("./boolean/greater");
+    const lower_1 = require("./boolean/lower");
+    function RandomFloat(minimum, maximum, inclusive = true /*, precision ?: number*/) {
         if (minimum > maximum) {
             throw new Error(`minimum(${minimum}) must not greater than maximum(${maximum})`);
         }
-        let random = Math.random() * (maximum - minimum);
-        let result = random + minimum;
-        if (precision) {
-            let strings = result.toString().split('.');
-            if (strings[1] !== undefined) {
-                strings[1] = strings[1].substr(0, precision);
-                //console.log('===============');
-                //console.log(precision);
-                //console.log(strings);
-                result = parseFloat(strings.join('.'));
-                //console.log(result);
+        else if (minimum === maximum) {
+            if (!inclusive) {
+                throw new Error(`minimum(${minimum}) must not equal maximum(${maximum}) in exclusive mode`);
+            }
+            else {
+                return minimum;
             }
         }
-        return result;
+        let random = Math.random() * (maximum - minimum);
+        let result = random + minimum;
+        if (inclusive) {
+            return result;
+        }
+        else {
+            if (greater_1.default(result, minimum, inclusive) && lower_1.default(result, maximum, inclusive)) {
+                return result;
+            }
+            else {
+                return RandomFloat(minimum, maximum, inclusive);
+            }
+        }
     }
     exports.default = RandomFloat;
 });

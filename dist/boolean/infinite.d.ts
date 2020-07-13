@@ -1,1 +1,1 @@
-export default function Infinite(value: any): value is number;
+export default function Infinite(number: number): boolean;

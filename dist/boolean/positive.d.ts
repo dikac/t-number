@@ -1,1 +1,1 @@
-export default function Positive(number: number): number is number;
+export default function Positive(number: number): boolean;

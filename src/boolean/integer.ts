@@ -1,8 +1,6 @@
-import Finite from "./finite";
+export default function Integer(number : number) : boolean {
 
-export default function Integer(number : number) : number is number {
-
-    if(Finite(number)) {
+    if(isFinite(number)) {
 
         return number === Math.floor(number);
 
