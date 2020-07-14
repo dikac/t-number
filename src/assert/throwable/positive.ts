@@ -1,6 +1,6 @@
-import PositiveType from "../string/positive";
+import PositiveType from "../../boolean/string/positive";
 
 export default function Integer(number : number) : Error {
 
-    return new Error(PositiveType(number, false))
+    return new Error(PositiveType( false, number))
 }

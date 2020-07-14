@@ -1,6 +1,6 @@
-import NanType from "../string/nan";
+import NanType from "../../boolean/string/nan";
 
 export default function Nan(number : number) : Error {
 
-    return new Error(NanType(number, false))
+    return new Error(NanType(false, number))
 }

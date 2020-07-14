@@ -1,4 +1,4 @@
-import NumberType from "../string/number";
+import NumberType from "../../boolean/string/number";
 
 export default function Number(number : any) : Error {
 

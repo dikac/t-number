@@ -1,27 +1,27 @@
 {
   "name": "@dikac/t-number",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Typescript number",
   "dependencies": {
-    "@dikac/t-boolean": "git+file:///b:/t-boolean",
-    "@dikac/t-function": "git+file:///b:/t-function",
-    "@dikac/t-message": "git+file:///b:/t-message",
-    "@dikac/t-validatable": "git+file:///b:/t-validatable",
-    "@dikac/t-validator": "git+file:///b:/t-validator",
-    "@dikac/t-value": "git+file:///b:/t-value",
-    "ts-toolbelt": "^6.12.1"
+    "@dikac/t-boolean": "^0.6.5",
+    "@dikac/t-function": "^0.5.1",
+    "@dikac/t-message": "^0.5.5",
+    "@dikac/t-validatable": "^0.14.2",
+    "@dikac/t-validator": "^0.8.0",
+    "@dikac/t-value": "^0.8.4",
+    "ts-toolbelt": "^6.13.0"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
-    "@types/node": "^12.12.48",
+    "@types/node": "^12.12.50",
     "cpy-cli": "^3.1.1",
     "jasmine": "^3.4.0",
+    "jasmine-ts-console-reporter": "^3.1.1",
     "json-properties-remover": "^0.1.2",
     "move-cli": "^1.2.1",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "typescript": "^3.9.6",
-    "jasmine-ts-console-reporter": "^3.1.1"
+    "typescript": "^3.9.6"
   },
   "scripts": {
     "spec-run": "jasmine --reporter=jasmine-ts-console-reporter --config=./jasmine.json",

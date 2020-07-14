@@ -1,1 +1,1 @@
-{"version":3,"file":"infinite.js","sourceRoot":"","sources":["../../../src/assert/throwable/infinite.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,iDAA8C;IAE9C,SAAwB,QAAQ,CAAC,MAAe;QAE5C,OAAO,IAAI,KAAK,CAAC,kBAAY,CAAC,MAAM,EAAE,KAAK,CAAC,CAAC,CAAA;IACjD,CAAC;IAHD,2BAGC"}
+{"version":3,"file":"infinite.js","sourceRoot":"","sources":["../../../src/assert/throwable/infinite.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,4DAAyD;IAEzD,SAAwB,QAAQ,CAAC,MAAe;QAE5C,OAAO,IAAI,KAAK,CAAC,kBAAY,CAAC,KAAK,EAAE,MAAM,CAAC,CAAC,CAAA;IACjD,CAAC;IAHD,2BAGC"}

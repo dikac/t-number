@@ -4,14 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../string/positive"], factory);
+        define(["require", "exports", "../../boolean/string/positive"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const positive_1 = require("../string/positive");
+    const positive_1 = require("../../boolean/string/positive");
     function Integer(number) {
-        return new Error(positive_1.default(number, false));
+        return new Error(positive_1.default(false, number));
     }
     exports.default = Integer;
 });

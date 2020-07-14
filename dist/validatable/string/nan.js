@@ -4,14 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../assert/string/nan"], factory);
+        define(["require", "exports", "../../boolean/string/nan"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const nan_1 = require("../../assert/string/nan");
+    const nan_1 = require("../../boolean/string/nan");
     function Nan(object) {
-        return nan_1.default(object.value, object.valid);
+        return nan_1.default(object.valid, object.value);
     }
     exports.default = Nan;
 });

@@ -4,15 +4,15 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-validatable/message/wrapper-merge", "@dikac/t-validatable/message/callback", "../boolean/lower-object"], factory);
+        define(["require", "exports", "@dikac/t-validatable/message/readonly-merge", "@dikac/t-validatable/message/callback", "../boolean/lower-object"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const wrapper_merge_1 = require("@dikac/t-validatable/message/wrapper-merge");
+    const readonly_merge_1 = require("@dikac/t-validatable/message/readonly-merge");
     const callback_1 = require("@dikac/t-validatable/message/callback");
     const lower_object_1 = require("../boolean/lower-object");
-    class Lower extends wrapper_merge_1.default {
+    class Lower extends readonly_merge_1.default {
         constructor(number, maximum, inclusive, message) {
             let container = {
                 maximum: maximum,
