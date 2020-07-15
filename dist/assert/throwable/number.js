@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const number_1 = require("../../boolean/string/number");
     function Number(number) {
-        return new Error(number_1.default(number, false));
+        return new Error(number_1.default(false, number));
     }
     exports.default = Number;
 });

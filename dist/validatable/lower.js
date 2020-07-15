@@ -4,14 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-validatable/message/readonly-merge", "@dikac/t-validatable/message/callback", "../boolean/lower-object"], factory);
+        define(["require", "exports", "@dikac/t-validatable/message/readonly-merge", "@dikac/t-validatable/message/callback", "../boolean/lower-from-object"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const readonly_merge_1 = require("@dikac/t-validatable/message/readonly-merge");
     const callback_1 = require("@dikac/t-validatable/message/callback");
-    const lower_object_1 = require("../boolean/lower-object");
+    const lower_from_object_1 = require("../boolean/lower-from-object");
     class Lower extends readonly_merge_1.default {
         constructor(number, maximum, inclusive, message) {
             let container = {
@@ -19,7 +19,7 @@
                 inclusive: inclusive,
                 value: number
             };
-            let msg = callback_1.default(container, lower_object_1.default, () => message(this));
+            let msg = callback_1.default(container, lower_from_object_1.default, () => message(this));
             super(container, msg, msg);
             this.maximum = maximum;
             this.inclusive = inclusive;

@@ -5,7 +5,7 @@ import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
 import MergeWrapper from "@dikac/t-validatable/message/readonly-merge";
 import MessageCallback from "@dikac/t-validatable/message/callback";
-import LowerObject from "../boolean/lower-object";
+import LowerFromObject from "../boolean/lower-from-object";
 import Inclusive from "../inclusive/inclusive";
 
 export default class Lower<Msg>
@@ -30,7 +30,7 @@ export default class Lower<Msg>
             value : number
         };
 
-        let msg = MessageCallback(container, LowerObject, () =>message(this));
+        let msg = MessageCallback(container, LowerFromObject, () =>message(this));
 
         super(container, msg, msg);
 

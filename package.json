@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-number",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Typescript number",
   "dependencies": {
     "@dikac/t-boolean": "^0.6.5",

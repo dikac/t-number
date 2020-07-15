@@ -10,9 +10,9 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const lower_1 = require("./lower");
-    function LowerObject(object) {
+    function LowerFromObject(object) {
         return lower_1.default(object.value, object.maximum, object.inclusive);
     }
-    exports.default = LowerObject;
+    exports.default = LowerFromObject;
 });
-//# sourceMappingURL=lower-object.js.map
+//# sourceMappingURL=lower-from-object.js.map
