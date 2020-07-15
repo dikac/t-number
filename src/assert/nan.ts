@@ -1,12 +1,12 @@
 import NanError from "./throwable/nan";
 import Function from "@dikac/t-function/function";
-import Callback from "@dikac/t-function/assert/callback";
+import Parameter from "@dikac/t-function/assert/parameter";
 
 export default function Nan(
     value : number,
     error : Function<[number], Error> = NanError
 ) : asserts value is number {
 
-    Callback(value, isNaN, error);
+    Parameter(value, isNaN, error);
 
 }

@@ -1,1 +1,1 @@
-{"version":3,"file":"number.js","sourceRoot":"","sources":["../../src/assert/number.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,8CAAsC;IAEtC,gEAAyD;IACzD,+CAA6C;IAE7C,SAAwB,MAAM,CAC1B,KAAe,EACf,QAAiC,gBAAW;QAG5C,kBAAQ,CAAC,KAAK,EAAE,gBAAK,EAAE,KAAK,CAAC,CAAC;IAClC,CAAC;IAND,yBAMC"}
+{"version":3,"file":"number.js","sourceRoot":"","sources":["../../src/assert/number.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,8CAAsC;IAEtC,kEAA2D;IAC3D,+CAA6C;IAE7C,SAAwB,MAAM,CAC1B,KAAe,EACf,QAA+B,gBAAW;QAG1C,mBAAS,CAAC,KAAK,EAAE,gBAAK,EAAE,KAAK,CAAC,CAAC;IACnC,CAAC;IAND,yBAMC"}

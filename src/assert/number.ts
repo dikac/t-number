@@ -1,12 +1,12 @@
 import Guard from "../boolean/number";
-import Function from "@dikac/t-function/function";
-import Callback from "@dikac/t-function/assert/callback";
+import Fn from "@dikac/t-function/function";
+import Parameter from "@dikac/t-function/assert/parameter";
 import NumberError from "./throwable/number";
 
 export default function Number(
     value : unknown,
-    error : Function<[any], Error> = NumberError
+    error : Fn<[unknown], Error> = NumberError
 ) : asserts value is number {
 
-    Callback(value, Guard, error);
+    Parameter(value, Guard, error);
 }

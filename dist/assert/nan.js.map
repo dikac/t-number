@@ -1,1 +1,1 @@
-{"version":3,"file":"nan.js","sourceRoot":"","sources":["../../src/assert/nan.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,yCAAuC;IAEvC,gEAAyD;IAEzD,SAAwB,GAAG,CACvB,KAAc,EACd,QAAoC,aAAQ;QAG5C,kBAAQ,CAAC,KAAK,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;IAElC,CAAC;IAPD,sBAOC"}
+{"version":3,"file":"nan.js","sourceRoot":"","sources":["../../src/assert/nan.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,yCAAuC;IAEvC,kEAA2D;IAE3D,SAAwB,GAAG,CACvB,KAAc,EACd,QAAoC,aAAQ;QAG5C,mBAAS,CAAC,KAAK,EAAE,KAAK,EAAE,KAAK,CAAC,CAAC;IAEnC,CAAC;IAPD,sBAOC"}
