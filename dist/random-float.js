@@ -13,11 +13,11 @@
     const lower_1 = require("./boolean/lower");
     function RandomFloat(minimum, maximum, inclusive = true /*, precision ?: number*/) {
         if (minimum > maximum) {
-            throw new Error(`minimum(${minimum}) must not greater than maximum(${maximum})`);
+            throw new Error(`minimum (${minimum}) must not greater than maximum (${maximum})`);
         }
         else if (minimum === maximum) {
             if (!inclusive) {
-                throw new Error(`minimum(${minimum}) must not equal maximum(${maximum}) in exclusive mode`);
+                throw new Error(`minimum (${minimum}) must not equal maximum (${maximum}) in exclusive mode`);
             }
             else {
                 return minimum;

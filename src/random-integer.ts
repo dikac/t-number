@@ -5,13 +5,13 @@ export default function RandomInteger (minimum : number, maximum : number, inclu
 
     if(minimum > maximum) {
 
-        throw new Error(`minimum(${minimum}) must not greater than maximum(${maximum})`);
+        throw new Error(`minimum (${minimum}) must not greater than maximum (${maximum})`);
 
     } else if(minimum === maximum) {
 
         if(!inclusive) {
 
-            throw new Error(`minimum(${minimum}) must not equal maximum(${maximum}) in exclusive mode`);
+            throw new Error(`minimum (${minimum}) must not equal maximum (${maximum}) in exclusive mode`);
 
         } else {
 
@@ -22,7 +22,7 @@ export default function RandomInteger (minimum : number, maximum : number, inclu
 
         if(!inclusive) {
 
-            throw new Error(`minimum(${minimum}) and maximum(${maximum}) different must greater than 1 in exclusive mode`);
+            throw new Error(`minimum (${minimum}) and maximum (${maximum}) different must greater than 1 in exclusive mode`);
         }
     }
 

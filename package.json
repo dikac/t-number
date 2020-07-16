@@ -1,15 +1,15 @@
 {
   "name": "@dikac/t-number",
-  "version": "0.14.1",
+  "version": "0.14.2",
   "description": "Typescript number",
   "dependencies": {
     "@dikac/t-boolean": "^0.7.1",
-    "@dikac/t-function": "^0.6.1",
+    "@dikac/t-function": "^0.7.0",
     "@dikac/t-message": "^0.5.7",
     "@dikac/t-validatable": "^0.14.3",
-    "@dikac/t-validator": "^0.8.1",
-    "@dikac/t-value": "^0.8.5",
-    "ts-toolbelt": "^6.13.4"
+    "@dikac/t-validator": "^0.8.2",
+    "@dikac/t-value": "^0.8.6",
+    "ts-toolbelt": "^6.13.6"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
