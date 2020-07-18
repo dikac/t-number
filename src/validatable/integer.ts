@@ -1,4 +1,4 @@
-import Callback from "@dikac/t-validatable/message/callback";
+import Callback from "@dikac/t-value/message/callback";
 import IntegerValidation from "../boolean/integer";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";

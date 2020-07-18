@@ -4,13 +4,13 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-validatable/message/readonly-merge", "@dikac/t-validatable/message/callback", "../boolean/lower-than-maximum"], factory);
+        define(["require", "exports", "@dikac/t-value/message/readonly-merge", "@dikac/t-value/message/callback", "../boolean/lower-than-maximum"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const readonly_merge_1 = require("@dikac/t-validatable/message/readonly-merge");
-    const callback_1 = require("@dikac/t-validatable/message/callback");
+    const readonly_merge_1 = require("@dikac/t-value/message/readonly-merge");
+    const callback_1 = require("@dikac/t-value/message/callback");
     const lower_than_maximum_1 = require("../boolean/lower-than-maximum");
     class Greater extends readonly_merge_1.default {
         constructor(object, message) {

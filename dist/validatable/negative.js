@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-validatable/message/callback", "../boolean/negative"], factory);
+        define(["require", "exports", "@dikac/t-value/message/callback", "../boolean/negative"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const callback_1 = require("@dikac/t-validatable/message/callback");
+    const callback_1 = require("@dikac/t-value/message/callback");
     const negative_1 = require("../boolean/negative");
     function Negative(number, message) {
         return callback_1.default(number, negative_1.default, message);
