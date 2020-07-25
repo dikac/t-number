@@ -1,5 +1,4 @@
 import Lower from "../../dist/assert/lower";
-import Greater from "../../dist/assert/greater";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

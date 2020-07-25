@@ -4,15 +4,16 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./greater"], factory);
+        define(["require", "exports", "./positive", "../validatable/string/positive"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const greater_1 = require("./greater");
-    function GreaterFromObject(object) {
-        return greater_1.default(object.value, object.minimum, object.inclusive);
+    const positive_1 = require("./positive");
+    const positive_2 = require("../validatable/string/positive");
+    function PositiveStandard() {
+        return new positive_1.default(positive_2.default);
     }
-    exports.default = GreaterFromObject;
+    exports.default = PositiveStandard;
 });
-//# sourceMappingURL=greater-from-object.js.map
+//# sourceMappingURL=positive-standard.js.map

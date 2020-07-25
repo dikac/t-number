@@ -1,4 +1,4 @@
-import LowerObject from "../../dist/boolean/lower-from-object";
+import LowerObject from "../../../dist/validatable/boolean/lower";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

@@ -4,15 +4,16 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./lower"], factory);
+        define(["require", "exports", "./finite", "../validatable/string/finite"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const lower_1 = require("./lower");
-    function LowerFromObject(object) {
-        return lower_1.default(object.value, object.maximum, object.inclusive);
+    const finite_1 = require("./finite");
+    const finite_2 = require("../validatable/string/finite");
+    function FiniteStandard() {
+        return new finite_1.default(finite_2.default);
     }
-    exports.default = LowerFromObject;
+    exports.default = FiniteStandard;
 });
-//# sourceMappingURL=lower-from-object.js.map
+//# sourceMappingURL=finite-standard.js.map

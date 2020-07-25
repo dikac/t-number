@@ -1,23 +1,21 @@
 import Greater from "./boolean/greater";
 import Lower from "./boolean/lower";
+import LowerThanMaximum from "./minimum/assert/lower-than-maximum";
 
 export default  function RandomFloat (minimum : number, maximum : number, inclusive : boolean = true/*, precision ?: number*/) : number {
 
-    if(minimum > maximum) {
+    LowerThanMaximum({
+        maximum : maximum,
+        minimum : minimum,
+        inclusive : inclusive,
+    });
 
-        throw new Error(`minimum (${minimum}) must not greater than maximum (${maximum})`);
-
-    } else if(minimum === maximum) {
+    if((maximum - minimum) === 0) {
 
         if(!inclusive) {
 
-            throw new Error(`minimum (${minimum}) must not equal maximum (${maximum}) in exclusive mode`);
-
-        } else {
-
-            return minimum;
+            throw new Error(`minimum (${minimum}) and maximum (${maximum}) different must greater than 0 in exclusive mode`);
         }
-
     }
 
     let random = Math.random() * (maximum - minimum);

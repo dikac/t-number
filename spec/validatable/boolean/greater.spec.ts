@@ -1,4 +1,4 @@
-import GreaterFromObject from "../../dist/boolean/greater-from-object";
+import GreaterFromObject from "../../../dist/validatable/boolean/greater";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 

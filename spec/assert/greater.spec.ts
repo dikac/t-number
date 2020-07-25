@@ -1,5 +1,4 @@
 import Greater from "../../dist/assert/greater";
-import Infinite from "../../dist/assert/infinite";
 
 it("enable console log", () => {spyOn(console, 'log').and.callThrough()});
 

@@ -3,39 +3,29 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
-import MergeWrapper from "@dikac/t-value/message/readonly-merge";
-import MessageCallback from "@dikac/t-value/message/callback";
-import GreaterObject from "../boolean/greater-from-object";
+import GreaterObject from "./boolean/greater";
 import Inclusive from "../inclusive/inclusive";
 
 export default class Greater<Msg>
-    extends MergeWrapper<Value<number>, Message<Msg>, Validatable>
+
     implements
-        Readonly<Inclusive>,
+        Readonly<Inclusive & Value<number> & Message<Msg> & Validatable>,
         Readonly<Minimum>
 {
-    readonly minimum : number;
-    readonly inclusive : boolean;
+    readonly valid : boolean;
 
     constructor(
-        number : number,
-        minimum : number,
-        inclusive : boolean,
-        message : Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], Msg>
+        readonly value : number,
+        readonly minimum : number,
+        readonly inclusive : boolean,
+        private _message : Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], Msg>
     ) {
 
-        let container : Inclusive & Minimum & Value<number> = {
-            minimum : minimum,
-            inclusive : inclusive,
-            value : number
-        };
+        this.valid = GreaterObject(this);
+    }
 
-        let msg = MessageCallback(container, GreaterObject, ()=>message(this));
+    get message() : Msg {
 
-        super(container, msg, msg);
-
-        this.minimum = minimum;
-        this.inclusive = inclusive;
-
+        return this._message(this)
     }
 }
