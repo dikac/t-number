@@ -1,7 +1,6 @@
 import Validatable from "@dikac/t-validatable/validatable";
-import Message from "@dikac/t-message/message";
+import Return from "@dikac/t-validator/return/return";
 import Value from "@dikac/t-value/value";
 import Function from "@dikac/t-function/function";
-declare type Return<Msg, Argument> = Readonly<Validatable<false> & Message<Msg> & Value<Argument>> | Readonly<Validatable<true> & Message<Msg> & Value<number>>;
-export default function Number<Msg, Argument>(value: Argument, message: Function<[Readonly<Value<Argument> & Validatable>], Msg>): Return<Msg, Argument>;
-export {};
+import Instance from "@dikac/t-validator/parameter/instance/instance";
+export default function Number<MessageT, Argument>(value: Argument, message: Function<[Readonly<Value<Argument> & Validatable>], MessageT>): Return<any, Argument, number, Readonly<Instance<Argument, MessageT>>>;

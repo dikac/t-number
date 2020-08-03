@@ -6,11 +6,12 @@ import LowerValidatable from "../validatable/lower";
 import Function from "@dikac/t-function/function";
 import Inclusive from "../inclusive/inclusive";
 import Maximum from "../maximum/maximum";
+import Return from "@dikac/t-validator/return/return";
 
-export default class Lower<Msg>
+export default class Lower<MessageT>
     implements
-        Validator<number, Validatable & Message<Msg> & Value<number>>,
-        Message<Function<[Readonly<Value<number> & Inclusive & Maximum & Validatable>], Msg>>,
+        Validator<number, number, LowerValidatable<MessageT>>,
+        Message<Function<[Readonly<Value<number> & Inclusive & Maximum & Validatable>], MessageT>>,
         Maximum,
         Inclusive
 {
@@ -18,12 +19,12 @@ export default class Lower<Msg>
     constructor(
         public maximum : number,
         public inclusive : boolean,
-        public message : Function<[Readonly<Value<number> & Inclusive & Maximum & Validatable>], Msg>
+        public message : Function<[Readonly<Value<number> & Inclusive & Maximum & Validatable>], MessageT>
     ) {
     }
 
-    validate(value: number): Readonly<Validatable & Message<Msg> & Value<number> & Inclusive & Maximum> {
+    validate<Argument extends number>(value: Argument): Return<number, Argument, number, LowerValidatable<MessageT>> {
 
-        return new LowerValidatable(value, this.maximum, this.inclusive, this.message);
+        return <Return<number, Argument, number, LowerValidatable<MessageT>>> new LowerValidatable(value, this.maximum, this.inclusive, this.message);
     }
 }

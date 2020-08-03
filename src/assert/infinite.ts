@@ -1,13 +1,13 @@
 import IsInfinite from "../boolean/infinite";
 import InfiniteError from "./throwable/infinite";
 import Function from "@dikac/t-function/function";
-import Parameter from "@dikac/t-function/assert/parameter";
+import Callback from "@dikac/t-function/assert/callback";
 
 export default function Infinite(
     value : number,
     error : Function<[number], Error> = InfiniteError
 ) : asserts value is number {
 
-    Parameter(value, IsInfinite, error);
+    Callback(value, IsInfinite, error);
 
 }

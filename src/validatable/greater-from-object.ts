@@ -6,9 +6,11 @@ import Function from "@dikac/t-function/function";
 import Inclusive from "../inclusive/inclusive";
 import Greater from "./greater";
 
-export default function GreaterFromObject<Msg>(
-    object : Inclusive & Minimum & Value<number> & Message<Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], Msg>>,
-) : Readonly<Value<number> &  Message<Msg> & Validatable & Inclusive & Minimum> {
+type Argument = Inclusive & Minimum & Value<number>;
+
+export default function GreaterFromObject<MessageT>(
+    object : Argument & Message<Function<[Readonly<Argument & Validatable>], MessageT>>,
+) : Readonly<Argument & Message<MessageT> & Validatable> {
 
     return new Greater(object.value, object.minimum, object.inclusive, object.message);
 }

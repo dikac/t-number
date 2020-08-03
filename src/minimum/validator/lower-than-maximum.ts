@@ -1,27 +1,25 @@
 import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
-import Value from "@dikac/t-value/value";
-import GreaterTHanMinimumValidatable from "../validatable/lower-than-maximum";
+import GreaterThanMinimumValidatable from "../validatable/lower-than-maximum";
 import Function from "@dikac/t-function/function";
 import Minimum from "../../minimum/minimum";
 import Maximum from "../../maximum/maximum";
 import Inclusive from "../../inclusive/inclusive";
+import Return from "@dikac/t-validator/return/return";
 
-type Return<Val extends Minimum & Maximum & Inclusive, Msg> = Readonly<Validatable & Message<Msg> & Value<Val> & Minimum & Maximum & Inclusive>
-
-export default class LowerThanMaximum<Val extends Minimum & Maximum & Inclusive, Msg>
+export default class LowerThanMaximum<Base extends Minimum & Maximum & Inclusive, MessageT>
     implements
-        Validator<Val, Readonly<Return<Val, Msg>>>,
-        Message<Function<[Readonly<Return<Val, Msg>>], Msg>>
+        Validator<Base, Base, GreaterThanMinimumValidatable<MessageT, Base>>,
+        Message<Function<[Readonly<Maximum & Inclusive & Minimum & Validatable>], MessageT>>
 {
     constructor(
-        public message : Function<[Readonly<Maximum & Inclusive & Minimum & Validatable>], Msg>
+        public message : Function<[Readonly<Maximum & Inclusive & Minimum & Validatable>], MessageT>
     ) {
     }
 
-    validate(value: Val): Readonly<Return<Val, Msg>> {
+    validate<Argument extends Base>(value: Argument): Return<Base, Argument, Base, GreaterThanMinimumValidatable<MessageT, Base>> {
 
-        return new GreaterTHanMinimumValidatable(value, this.message);
+        return new GreaterThanMinimumValidatable(value, this.message);
     }
 }

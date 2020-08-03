@@ -6,10 +6,10 @@ import Function from "@dikac/t-function/function";
 import GreaterObject from "./boolean/greater";
 import Inclusive from "../inclusive/inclusive";
 
-export default class Greater<Msg>
+export default class Greater<MessageT>
 
     implements
-        Readonly<Inclusive & Value<number> & Message<Msg> & Validatable>,
+        Readonly<Inclusive & Value<number> & Message<MessageT> & Validatable>,
         Readonly<Minimum>
 {
     readonly valid : boolean;
@@ -18,13 +18,13 @@ export default class Greater<Msg>
         readonly value : number,
         readonly minimum : number,
         readonly inclusive : boolean,
-        private _message : Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], Msg>
+        private _message : Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], MessageT>
     ) {
 
         this.valid = GreaterObject(this);
     }
 
-    get message() : Msg {
+    get message() : MessageT {
 
         return this._message(this)
     }

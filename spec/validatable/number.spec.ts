@@ -44,7 +44,7 @@ describe(`compiler compatible`,function() {
 
     it(`readonly`,function() {
 
-        let validatable = Validator(<unknown>1, NumberMessage);;
+        let validatable = Validator(<unknown>1, NumberMessage);
 
         try {
             // @ts-expect-error

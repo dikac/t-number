@@ -9,8 +9,8 @@ import Inclusive from "../../inclusive/inclusive";
 import Maximum from "../../maximum/maximum";
 import GreaterThanMinimumFunction from "../boolean/lower-than-maximum";
 
-export default class Greater<Msg,  Val extends Minimum & Maximum & Inclusive>
-    extends MergeWrapper<Value<Val>, Message<Msg>, Validatable>
+export default class Greater<MessageT,  ValueT extends Minimum & Maximum & Inclusive>
+    extends MergeWrapper<Value<ValueT>, Message<MessageT>, Validatable>
     implements
         Readonly<Inclusive>,
         Readonly<Minimum>,
@@ -21,11 +21,11 @@ export default class Greater<Msg,  Val extends Minimum & Maximum & Inclusive>
     readonly inclusive : boolean;
 
     constructor(
-        object : Val,
-        message : Function<[Readonly<Maximum & Inclusive & Minimum & Validatable>], Msg>
+        object : ValueT,
+        message : Function<[Readonly<Maximum & Inclusive & Minimum & Validatable>], MessageT>
     ) {
 
-        let container : Inclusive & Minimum & Value<Val> & Maximum = {
+        let container : Inclusive & Minimum & Value<ValueT> & Maximum = {
             maximum : object.maximum,
             minimum : object.minimum,
             inclusive : object.inclusive,

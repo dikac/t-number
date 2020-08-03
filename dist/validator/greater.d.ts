@@ -2,13 +2,15 @@ import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
+import GreaterValidatable from "../validatable/greater";
 import Function from "@dikac/t-function/function";
 import Inclusive from "../inclusive/inclusive";
 import Minimum from "../minimum/minimum";
-export default class Greater<Msg> implements Validator<number, Validatable & Message<Msg> & Value<number>>, Message<Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], Msg>>, Minimum, Inclusive {
+import Return from "@dikac/t-validator/return/return";
+export default class Greater<MessageT> implements Validator<number, number, GreaterValidatable<MessageT>>, Message<Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], MessageT>>, Minimum, Inclusive {
     minimum: number;
     inclusive: boolean;
-    message: Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], Msg>;
-    constructor(minimum: number, inclusive: boolean, message: Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], Msg>);
-    validate(value: number): Readonly<Validatable & Message<Msg> & Value<number> & Inclusive & Minimum>;
+    message: Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], MessageT>;
+    constructor(minimum: number, inclusive: boolean, message: Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], MessageT>);
+    validate<Argument extends number>(value: Argument): Return<number, Argument, number, GreaterValidatable<MessageT>>;
 }

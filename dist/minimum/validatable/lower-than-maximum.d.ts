@@ -6,9 +6,9 @@ import Function from "@dikac/t-function/function";
 import MergeWrapper from "@dikac/t-value/message/readonly-merge";
 import Inclusive from "../../inclusive/inclusive";
 import Maximum from "../../maximum/maximum";
-export default class Greater<Msg, Val extends Minimum & Maximum & Inclusive> extends MergeWrapper<Value<Val>, Message<Msg>, Validatable> implements Readonly<Inclusive>, Readonly<Minimum>, Readonly<Maximum> {
+export default class Greater<MessageT, ValueT extends Minimum & Maximum & Inclusive> extends MergeWrapper<Value<ValueT>, Message<MessageT>, Validatable> implements Readonly<Inclusive>, Readonly<Minimum>, Readonly<Maximum> {
     readonly minimum: number;
     readonly maximum: number;
     readonly inclusive: boolean;
-    constructor(object: Val, message: Function<[Readonly<Maximum & Inclusive & Minimum & Validatable>], Msg>);
+    constructor(object: ValueT, message: Function<[Readonly<Maximum & Inclusive & Minimum & Validatable>], MessageT>);
 }

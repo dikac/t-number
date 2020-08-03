@@ -5,4 +5,4 @@ import Function from "@dikac/t-function/function";
 import Inclusive from "../inclusive/inclusive";
 import Minimum from "../minimum/minimum";
 import Greater from "./greater";
-export default function GreaterFromObject<Msg>(object: Minimum & Inclusive & Message<Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], Msg>>): Greater<Msg>;
+export default function GreaterFromObject<MessageT>(object: Minimum & Inclusive & Message<Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], MessageT>>): Greater<MessageT>;

@@ -24,7 +24,7 @@ describe(`compiler compatible`,function() {
 
     it(`readonly`,function() {
 
-        let validatable = Validator(1, IntegerMessage);;
+        let validatable = Validator(1, IntegerMessage);
 
         try {
             // @ts-expect-error
