@@ -2,7 +2,7 @@ import Greater from "./boolean/greater";
 import Lower from "./boolean/lower";
 import LowerThanMaximum from "./minimum/assert/lower-than-maximum";
 
-export default  function RandomFloat (minimum : number, maximum : number, inclusive : boolean = true/*, precision ?: number*/) : number {
+export default  function RandomFloat (minimum : number, maximum : number, inclusive : boolean = true) : number {
 
     LowerThanMaximum({
         maximum : maximum,

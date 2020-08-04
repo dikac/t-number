@@ -10,12 +10,11 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     function Number(valid, value) {
-        let string = value.toString();
         if (valid) {
-            return `value "${string}" is number`;
+            return `value is number`;
         }
         else {
-            return `value "${string}" is not number`;
+            return `value is not number`;
         }
     }
     exports.default = Number;

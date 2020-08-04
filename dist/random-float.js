@@ -12,7 +12,7 @@
     const greater_1 = require("./boolean/greater");
     const lower_1 = require("./boolean/lower");
     const lower_than_maximum_1 = require("./minimum/assert/lower-than-maximum");
-    function RandomFloat(minimum, maximum, inclusive = true /*, precision ?: number*/) {
+    function RandomFloat(minimum, maximum, inclusive = true) {
         lower_than_maximum_1.default({
             maximum: maximum,
             minimum: minimum,
