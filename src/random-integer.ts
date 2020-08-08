@@ -35,7 +35,5 @@ export default function RandomInteger (minimum : number, maximum : number, inclu
 
             return  RandomInteger(minimum, maximum, inclusive);
         }
-
     }
-
 }
