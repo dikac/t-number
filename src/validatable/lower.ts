@@ -6,19 +6,23 @@ import Function from "@dikac/t-function/function";
 import LowerFromObject from "./boolean/lower";
 import Inclusive from "../inclusive/inclusive";
 
-export default class Lower<MessageT>
+export default class Lower<ValueT extends number, MessageT>
     implements
         Readonly<Inclusive>,
-        Readonly<Maximum & Value<number> & Message<MessageT> & Validatable>
+        Readonly<Maximum &
+            Value<ValueT> &
+            Message<MessageT> &
+            Validatable
+        >
 {
 
     readonly valid : boolean;
 
     constructor(
-        readonly value : number,
+        readonly value : ValueT,
         readonly maximum : number,
         readonly inclusive : boolean,
-        private _message : Function<[Readonly<Value<number> & Inclusive & Maximum & Validatable>], MessageT>
+        private _message : Function<[Readonly<Value<ValueT> & Inclusive & Maximum & Validatable>], MessageT>
     ) {
 
         this.valid = LowerFromObject(this);

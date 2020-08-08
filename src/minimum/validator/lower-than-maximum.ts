@@ -1,4 +1,4 @@
-import Validator from "@dikac/t-validator/validator";
+import Validator from "@dikac/t-validator/simple";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import GreaterThanMinimumValidatable from "../validatable/lower-than-maximum";
@@ -6,7 +6,7 @@ import Function from "@dikac/t-function/function";
 import Minimum from "../../minimum/minimum";
 import Maximum from "../../maximum/maximum";
 import Inclusive from "../../inclusive/inclusive";
-import Return from "@dikac/t-validator/return/return";
+import SimpleValidatable from "@dikac/t-validator/validatable/simple";
 
 export default class LowerThanMaximum<Base extends Minimum & Maximum & Inclusive, MessageT>
     implements
@@ -18,8 +18,8 @@ export default class LowerThanMaximum<Base extends Minimum & Maximum & Inclusive
     ) {
     }
 
-    validate<Argument extends Base>(value: Argument): Return<Base, Argument, Base, GreaterThanMinimumValidatable<MessageT, Base>> {
+    validate<Argument extends Base>(value: Argument): SimpleValidatable<Base, Argument, Base, GreaterThanMinimumValidatable<MessageT, Base>> {
 
-        return new GreaterThanMinimumValidatable(value, this.message);
+        return <SimpleValidatable<Base, Argument, Base, GreaterThanMinimumValidatable<MessageT, Base>>> new GreaterThanMinimumValidatable(value, this.message);
     }
 }

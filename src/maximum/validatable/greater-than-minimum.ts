@@ -9,7 +9,7 @@ import Inclusive from "../../inclusive/inclusive";
 import Maximum from "../maximum";
 import GreaterThanMinimumFunction from "../boolean/greater-than-minimum";
 
-export default class Greater<MessageT,  ValueT extends Minimum & Maximum & Inclusive>
+export default class Greater<MessageT, ValueT extends Minimum & Maximum & Inclusive>
     extends MergeWrapper<Value<ValueT>, Message<MessageT>, Validatable>
     implements
         Readonly<Inclusive>,
@@ -39,6 +39,5 @@ export default class Greater<MessageT,  ValueT extends Minimum & Maximum & Inclu
         this.minimum = object.minimum;
         this.maximum = object.maximum;
         this.inclusive = object.inclusive;
-
     }
 }

@@ -66,7 +66,7 @@ describe(`value equal to minimum`,function() {
 
     describe(`inclusive`,function() {
 
-        let greater = new Greater<string>(1, 1, true, GreaterString);
+        let greater = new Greater<number, string>(1, 1, true, GreaterString);
 
         it('validate object', ()=>{
 
@@ -80,7 +80,7 @@ describe(`value equal to minimum`,function() {
 
     describe(`exclusive`,function() {
 
-        let greater = new Greater<string>(1, 1, false, GreaterString);
+        let greater = new Greater<number, string>(1, 1, false, GreaterString);
 
         it('validate object', ()=>{
 
@@ -97,7 +97,7 @@ describe(`value greater to minimum`,function() {
 
     describe(`inclusive`,function() {
 
-        let greater = new Greater<string>(2, 1, true, GreaterString);
+        let greater = new Greater<number, string>(2, 1, true, GreaterString);
 
         it('validate object', ()=>{
 
@@ -111,7 +111,7 @@ describe(`value greater to minimum`,function() {
 
     describe(`exclusive`,function() {
 
-        let greater = new Greater<string>(2, 1, false, GreaterString);
+        let greater = new Greater<number, string>(2, 1, false, GreaterString);
 
         it('validate object', ()=>{
 
@@ -128,7 +128,7 @@ describe(`value lower to minimum`,function() {
 
     describe(`inclusive`,function() {
 
-        let greater = new Greater<string>(-1, 1, true, GreaterString);
+        let greater = new Greater<number, string>(-1, 1, true, GreaterString);
 
         it('validate object', ()=>{
 
@@ -142,7 +142,7 @@ describe(`value lower to minimum`,function() {
 
     describe(`exclusive`,function() {
 
-        let greater = new Greater<string>(-1, 1, false, GreaterString);
+        let greater = new Greater<number, string>(-1, 1, false, GreaterString);
 
         it('validate object', ()=>{
 
