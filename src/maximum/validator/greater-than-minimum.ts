@@ -1,4 +1,4 @@
-import Validator from "@dikac/t-validator/simple";
+import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import GreaterTHanMinimumValidatable from "../validatable/greater-than-minimum";
@@ -10,7 +10,7 @@ import SimpleValidatable from "@dikac/t-validator/validatable/simple";
 
 export default class GreaterThanMinimum<Base extends Minimum & Maximum & Inclusive, MessageT>
     implements
-        Validator<Base, Base, GreaterTHanMinimumValidatable<MessageT, Base>>,
+        Validator<Base, Base, boolean, boolean, GreaterTHanMinimumValidatable<MessageT, Base>>,
         Message<Function<[Readonly<Maximum & Inclusive & Minimum & Validatable>], MessageT>>
 {
     constructor(

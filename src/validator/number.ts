@@ -4,7 +4,7 @@ import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
 import NumberValidatable from "../validatable/number";
 import Function from "@dikac/t-function/function";
-import Instance from "@dikac/t-validator/validatable/instance";
+import Instance from "@dikac/t-validator/validatable/validatable";
 import SimpleValidatable from "@dikac/t-validator/validatable/simple";
 
 
@@ -19,7 +19,9 @@ export default class Number<MessageT>
     ) {
     }
 
-    validate<Argument extends unknown>(value: Argument): SimpleValidatable<unknown, Argument, number, Readonly<Instance<unknown, MessageT>>>  {
+    validate<Argument extends number>(value: Argument): Readonly<Instance<Argument, MessageT, true>>
+    validate<Argument extends unknown>(value: Argument): SimpleValidatable<unknown, Argument, number, Readonly<Instance<unknown, MessageT>>>
+    validate<Argument extends unknown>(value: Argument) {
 
         return <SimpleValidatable<unknown, Argument, number, Readonly<Instance<number, MessageT>>>> NumberValidatable(value, this.message);
     }

@@ -1,7 +1,7 @@
 import NumberMessage from "./string/number";
 import Number from "./number";
 import Return from "@dikac/t-validator/validatable/simple";
-import Instance from "@dikac/t-validator/validatable/instance";
+import Instance from "@dikac/t-validator/validatable/validatable";
 
 
 export default function NumberStandard<Argument extends unknown>(
