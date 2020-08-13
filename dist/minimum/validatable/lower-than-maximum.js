@@ -12,7 +12,7 @@
     const readonly_merge_1 = require("@dikac/t-validator/validatable/readonly-merge");
     const callback_1 = require("@dikac/t-validator/validatable/callback");
     const lower_than_maximum_1 = require("../boolean/lower-than-maximum");
-    class Greater extends readonly_merge_1.default {
+    class LowerThanMaximum extends readonly_merge_1.default {
         constructor(object, message) {
             let container = {
                 maximum: object.maximum,
@@ -27,6 +27,6 @@
             this.inclusive = object.inclusive;
         }
     }
-    exports.default = Greater;
+    exports.default = LowerThanMaximum;
 });
 //# sourceMappingURL=lower-than-maximum.js.map

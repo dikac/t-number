@@ -6,7 +6,7 @@ import Function from "@dikac/t-function/function";
 import MergeWrapper from "@dikac/t-validator/validatable/readonly-merge";
 import Inclusive from "../../inclusive/inclusive";
 import Maximum from "../../maximum/maximum";
-export default class Greater<MessageT, ValueT extends Minimum & Maximum & Inclusive> extends MergeWrapper<Value<ValueT>, Message<MessageT>, Validatable> implements Readonly<Inclusive>, Readonly<Minimum>, Readonly<Maximum> {
+export default class LowerThanMaximum<MessageT, ValueT extends Minimum & Maximum & Inclusive> extends MergeWrapper<Value<ValueT>, Message<MessageT>, Validatable> implements Readonly<Inclusive>, Readonly<Minimum>, Readonly<Maximum> {
     readonly minimum: number;
     readonly maximum: number;
     readonly inclusive: boolean;

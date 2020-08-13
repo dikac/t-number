@@ -20,6 +20,6 @@ export default class GreaterThanMinimum<Base extends Minimum & Maximum & Inclusi
 
     validate<Argument extends Base>(value: Argument): SimpleValidatable<Base, Argument, Base, GreaterTHanMinimumValidatable<MessageT, Base>> {
 
-        return < SimpleValidatable<Base, Argument, Base, GreaterTHanMinimumValidatable<MessageT, Base>>> new GreaterTHanMinimumValidatable(value, this.message);
+        return <SimpleValidatable<Base, Argument, Base, GreaterTHanMinimumValidatable<MessageT, Base>>> new GreaterTHanMinimumValidatable(value, this.message);
     }
 }

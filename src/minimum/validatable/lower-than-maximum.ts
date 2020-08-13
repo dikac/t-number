@@ -9,7 +9,7 @@ import Inclusive from "../../inclusive/inclusive";
 import Maximum from "../../maximum/maximum";
 import GreaterThanMinimumFunction from "../boolean/lower-than-maximum";
 
-export default class Greater<MessageT,  ValueT extends Minimum & Maximum & Inclusive>
+export default class LowerThanMaximum<MessageT,  ValueT extends Minimum & Maximum & Inclusive>
     extends MergeWrapper<Value<ValueT>, Message<MessageT>, Validatable>
     implements
         Readonly<Inclusive>,
