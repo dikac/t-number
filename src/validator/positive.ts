@@ -3,18 +3,17 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
 import PositiveValidatable from "../validatable/positive";
-import Function from "@dikac/t-function/function";
 import SimpleValidatable from "@dikac/t-validator/validatable/simple";
 import Instance from "@dikac/t-validator/validatable/validatable";
 
 export default class Positive<MessageT>
     implements
         Validator<number, number, boolean, boolean, Readonly<Instance<number, MessageT>>>,
-        Message<Function<[Readonly<Value<number> & Validatable>], MessageT>>
+        Message<(result:Readonly<Value<number> & Validatable>)=>MessageT>
 {
 
     constructor(
-       public message : Function<[Readonly<Value<number> & Validatable>], MessageT>
+       public message : (result:Readonly<Value<number> & Validatable>)=>MessageT
     ) {
     }
 

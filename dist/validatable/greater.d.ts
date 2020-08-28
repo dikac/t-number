@@ -2,7 +2,6 @@ import Minimum from "../minimum/minimum";
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
-import Function from "@dikac/t-function/function";
 import Inclusive from "../inclusive/inclusive";
 export default class Greater<ValueT extends number, MessageT> implements Readonly<Inclusive & Value<ValueT> & Message<MessageT> & Validatable>, Readonly<Minimum> {
     readonly value: ValueT;
@@ -10,6 +9,6 @@ export default class Greater<ValueT extends number, MessageT> implements Readonl
     readonly inclusive: boolean;
     private _message;
     readonly valid: boolean;
-    constructor(value: ValueT, minimum: number, inclusive: boolean, _message: Function<[Readonly<Value<ValueT> & Inclusive & Minimum & Validatable>], MessageT>);
+    constructor(value: ValueT, minimum: number, inclusive: boolean, _message: (result: Readonly<Value<ValueT> & Inclusive & Minimum & Validatable>) => MessageT);
     get message(): MessageT;
 }

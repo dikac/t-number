@@ -3,7 +3,6 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
 import GreaterValidatable from "../validatable/greater";
-import Function from "@dikac/t-function/function";
 import Inclusive from "../inclusive/inclusive";
 import Minimum from "../minimum/minimum";
 import SimpleValidatable from "@dikac/t-validator/validatable/simple";
@@ -11,14 +10,14 @@ import SimpleValidatable from "@dikac/t-validator/validatable/simple";
 export default class Greater<MessageT>
     implements
         Validator<number, number, boolean, boolean, GreaterValidatable<number, MessageT>>,
-        Message<Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], MessageT>>,
+        Message<(result:Readonly<Value<number> & Inclusive & Minimum & Validatable>)=>MessageT>,
         Minimum,
         Inclusive
 {
     constructor(
         public minimum : number,
         public inclusive : boolean,
-        public message : Function<[Readonly<Value<number> & Inclusive & Minimum & Validatable>], MessageT>
+        public message : (result:Readonly<Value<number> & Inclusive & Minimum & Validatable>)=>MessageT
     ) {
     }
 
