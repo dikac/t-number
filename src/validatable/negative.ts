@@ -1,4 +1,4 @@
-import Callback from "@dikac/t-validator/validatable/callback";
+import Callback from "@dikac/t-validator/validatable/callback-function";
 import NegativeValidation from "../boolean/negative";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";

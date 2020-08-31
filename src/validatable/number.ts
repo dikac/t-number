@@ -1,4 +1,4 @@
-import Callback from "@dikac/t-validator/validatable/callback";
+import Callback from "@dikac/t-validator/validatable/callback-function";
 import NumberGuard from "../boolean/number";
 import Validatable from "@dikac/t-validatable/validatable";
 import Return from "@dikac/t-validator/validatable/simple";
