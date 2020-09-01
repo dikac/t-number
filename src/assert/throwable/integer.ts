@@ -1,4 +1,4 @@
-import IntegerType from "../../boolean/string/integer";
+import IntegerType from "../string/integer";
 
 export default function Integer(number : number) : Error {
 

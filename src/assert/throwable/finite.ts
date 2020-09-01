@@ -1,4 +1,4 @@
-import FiniteType from "../../boolean/string/finite";
+import FiniteType from "../string/finite";
 
 export default function Finite(number : number) : Error {
 

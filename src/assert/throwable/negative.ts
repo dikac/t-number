@@ -1,4 +1,4 @@
-import NegativeType from "../../boolean/string/negative";
+import NegativeType from "../string/negative";
 
 export default function Integer(number : number) : Error {
 

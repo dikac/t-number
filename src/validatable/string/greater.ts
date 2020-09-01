@@ -2,7 +2,7 @@ import Minimum from "../../minimum/minimum";
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Inclusive from "../../inclusive/inclusive";
-import GreaterParameter from "../../boolean/string/greater";
+import GreaterParameter from "../../assert/string/greater";
 
 /**
  * message for between validation

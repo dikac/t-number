@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/greater"], factory);
+        define(["require", "exports", "../../assert/string/greater"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const greater_1 = require("../../boolean/string/greater");
+    const greater_1 = require("../../assert/string/greater");
     /**
      * message for between validation
      */

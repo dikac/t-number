@@ -1,4 +1,4 @@
-import GreaterType from "../../boolean/string/greater";
+import GreaterType from "../string/greater";
 
 export default function Greater(number : number, minimum : number, inclusive : boolean) : Error {
 

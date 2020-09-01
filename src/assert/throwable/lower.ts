@@ -1,4 +1,4 @@
-import LowerType from "../../boolean/string/lower";
+import LowerType from "../string/lower";
 
 export default function Lower(number : number, minimum : number, inclusive : boolean) : Error {
 

@@ -1,6 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
-import PositiveAssert from "../../boolean/string/positive";
+import PositiveAssert from "../../assert/string/positive";
 
 export default function Positive(object : Readonly<Value<number> & Validatable>) : string {
 

@@ -1,6 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
-import NegativeAssert from "../../boolean/string/negative";
+import NegativeAssert from "../../assert/string/negative";
 
 export default function Negative(object : Readonly<Value<number> & Validatable>) : string {
 

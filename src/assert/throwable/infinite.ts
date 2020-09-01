@@ -1,4 +1,4 @@
-import InfiniteType from "../../boolean/string/infinite";
+import InfiniteType from "../string/infinite";
 
 export default function Infinite(number : number) : Error {
 

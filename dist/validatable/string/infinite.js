@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/infinite"], factory);
+        define(["require", "exports", "../../assert/string/infinite"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const infinite_1 = require("../../boolean/string/infinite");
+    const infinite_1 = require("../../assert/string/infinite");
     function Infinite(object) {
         return infinite_1.default(object.valid, object.value);
     }

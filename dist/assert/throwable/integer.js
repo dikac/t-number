@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/integer"], factory);
+        define(["require", "exports", "../string/integer"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const integer_1 = require("../../boolean/string/integer");
+    const integer_1 = require("../string/integer");
     function Integer(number) {
         return new Error(integer_1.default(false, number));
     }

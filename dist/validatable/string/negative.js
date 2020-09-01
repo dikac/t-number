@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/negative"], factory);
+        define(["require", "exports", "../../assert/string/negative"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const negative_1 = require("../../boolean/string/negative");
+    const negative_1 = require("../../assert/string/negative");
     function Negative(object) {
         return negative_1.default(object.valid, object.value);
     }

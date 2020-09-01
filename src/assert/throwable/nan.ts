@@ -1,4 +1,4 @@
-import NanType from "../../boolean/string/nan";
+import NanType from "../string/nan";
 
 export default function Nan(number : number) : Error {
 

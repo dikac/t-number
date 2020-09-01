@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/lower"], factory);
+        define(["require", "exports", "../../assert/string/lower"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const lower_1 = require("../../boolean/string/lower");
+    const lower_1 = require("../../assert/string/lower");
     /**
      * message for between validation
      */
