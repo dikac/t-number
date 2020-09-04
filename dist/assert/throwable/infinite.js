@@ -10,8 +10,8 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const infinite_1 = require("../string/infinite");
-    function Infinite(number) {
-        return new Error(infinite_1.default(false, number));
+    function Infinite(number, subject) {
+        return new Error(infinite_1.default(false, number, subject));
     }
     exports.default = Infinite;
 });

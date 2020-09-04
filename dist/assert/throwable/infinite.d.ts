@@ -1,1 +1,1 @@
-export default function Infinite(number: number): Error;
+export default function Infinite(number: number, subject?: string): Error;

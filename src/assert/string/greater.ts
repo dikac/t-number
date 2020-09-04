@@ -1,4 +1,3 @@
-import Trim from "@dikac/t-string/trim";
 import SentencesIs from "@dikac/t-string/message/sentences-is";
 
 /**
@@ -12,20 +11,20 @@ export default function Greater(
     subject : string = ''
 ) : string {
 
-    const sentence = new SentencesIs(valid, [subject, value.toString()]);
+    const sentence = SentencesIs(valid, [subject, value.toString()]);
 
-    sentence.type = [minimum.toString()];
+    sentence.object = [minimum.toString()];
 
     if(inclusive) {
 
-        sentence.expectation = {
+        sentence.predicate = {
             invalid:['must greater or equal than'],
             valid:['is greater or equal than'],
         }
 
     } else {
 
-        sentence.expectation = {
+        sentence.predicate = {
             invalid:['must greater than'],
             valid:['is greater than'],
         }

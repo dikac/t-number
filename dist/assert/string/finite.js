@@ -11,8 +11,8 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const sentences_is_1 = require("@dikac/t-string/message/sentences-is");
     function Finite(valid, value, subject = '') {
-        const sentence = new sentences_is_1.default(valid, [subject, value.toString()]);
-        sentence.type = ['finite'];
+        const sentence = sentences_is_1.default(valid, [subject, value.toString()]);
+        sentence.object = ['finite'];
         return sentence.message;
     }
     exports.default = Finite;

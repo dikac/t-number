@@ -10,7 +10,7 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const negative_1 = require("../string/negative");
-    function Integer(number) {
+    function Integer(number, subject) {
         return new Error(negative_1.default(false, number));
     }
     exports.default = Integer;

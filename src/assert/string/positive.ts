@@ -6,9 +6,9 @@ export default function Positive(
     subject : string = '',
 ) : string {
 
-    let sentence = new SentencesIs(valid);
-    sentence.type.push('positive');
-    sentence.value.push(subject, value.toString());
+    let sentence = SentencesIs(valid);
+    sentence.object.push('positive');
+    sentence.subject.push(subject, value.toString());
 
     return sentence.message;
 }

@@ -10,7 +10,7 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const lower_1 = require("../string/lower");
-    function Lower(number, minimum, inclusive) {
+    function Lower(number, minimum, inclusive, subject) {
         return new Error(lower_1.default(false, number, minimum, inclusive));
     }
     exports.default = Lower;

@@ -10,8 +10,8 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const number_1 = require("../string/number");
-    function Number(number) {
-        return new Error(number_1.default(false, number));
+    function Number(number, subject, conversion) {
+        return new Error(number_1.default(false, number, subject, conversion));
     }
     exports.default = Number;
 });

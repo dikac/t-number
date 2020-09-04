@@ -11,8 +11,8 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const sentences_is_1 = require("@dikac/t-string/message/sentences-is");
     function Infinite(valid, value, subject = '') {
-        const sentence = new sentences_is_1.default(valid, [subject, value.toString()]);
-        sentence.type = ['infinite'];
+        const sentence = sentences_is_1.default(valid, [subject, value.toString()]);
+        sentence.object = ['infinite'];
         return sentence.message;
     }
     exports.default = Infinite;

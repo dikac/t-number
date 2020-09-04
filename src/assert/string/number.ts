@@ -7,13 +7,13 @@ export default function Number(
     conversion : (value:unknown)=>string = value=>typeof value
 ) : string {
 
-    let sentence = new SentencesIs(valid);
-    sentence.type.push('number');
-    sentence.value.push(subject);
+    let sentence = SentencesIs(valid);
+    sentence.object.push('number');
+    sentence.subject.push(subject);
 
     if(!valid) {
 
-        sentence.value.push(conversion(value));
+        sentence.subject.push(conversion(value));
     }
 
     return sentence.message;

@@ -11,9 +11,9 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const sentences_is_1 = require("@dikac/t-string/message/sentences-is");
     function Positive(valid, value, subject = '') {
-        let sentence = new sentences_is_1.default(valid);
-        sentence.type.push('positive');
-        sentence.value.push(subject, value.toString());
+        let sentence = sentences_is_1.default(valid);
+        sentence.object.push('positive');
+        sentence.subject.push(subject, value.toString());
         return sentence.message;
     }
     exports.default = Positive;

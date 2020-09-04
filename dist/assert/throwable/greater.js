@@ -10,8 +10,8 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const greater_1 = require("../string/greater");
-    function Greater(number, minimum, inclusive) {
-        return new Error(greater_1.default(false, number, minimum, inclusive));
+    function Greater(number, minimum, inclusive, subject) {
+        return new Error(greater_1.default(false, number, minimum, inclusive, subject));
     }
     exports.default = Greater;
 });

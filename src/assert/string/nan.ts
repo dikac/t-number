@@ -6,9 +6,9 @@ export default function Nan(
     subject : string = '',
 ) : string {
 
-    let sentence = new SentencesIs(valid);
-    sentence.type.push('NaN');
-    sentence.value.push(subject, value.toString());
+    let sentence = SentencesIs(valid);
+    sentence.object.push('NaN');
+    sentence.subject.push(subject, value.toString());
 
     return sentence.message;
 }

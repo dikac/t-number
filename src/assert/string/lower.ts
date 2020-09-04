@@ -1,4 +1,3 @@
-import Trim from "@dikac/t-string/trim";
 import SentencesIs from "@dikac/t-string/message/sentences-is";
 
 /**
@@ -12,20 +11,20 @@ export default function Lower(
     subject : string = ''
 ) : string {
 
-    const sentence = new SentencesIs(valid, [subject, value.toString()]);
+    const sentence = SentencesIs(valid, [subject, value.toString()]);
 
-    sentence.type = [minimum.toString()];
+    sentence.object = [minimum.toString()];
 
     if(inclusive) {
 
-        sentence.expectation = {
+        sentence.predicate = {
             invalid:['must lower or equal than'],
             valid:['is lower or equal than'],
         }
 
     } else {
 
-        sentence.expectation = {
+        sentence.predicate = {
             invalid:['must lower than'],
             valid:['is lower than'],
         }

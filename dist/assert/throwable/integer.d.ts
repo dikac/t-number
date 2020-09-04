@@ -1,1 +1,1 @@
-export default function Integer(number: number): Error;
+export default function Integer(number: number, subject?: string): Error;

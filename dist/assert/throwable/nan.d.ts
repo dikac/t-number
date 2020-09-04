@@ -1,1 +1,1 @@
-export default function Nan(number: number): Error;
+export default function Nan(number: number, subject?: string): Error;

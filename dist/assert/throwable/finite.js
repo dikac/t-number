@@ -10,8 +10,8 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const finite_1 = require("../string/finite");
-    function Finite(number) {
-        return new Error(finite_1.default(false, number));
+    function Finite(number, subject) {
+        return new Error(finite_1.default(false, number, subject));
     }
     exports.default = Finite;
 });

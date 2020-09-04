@@ -6,9 +6,9 @@ export default function Negative(
     subject : string = '',
 ) : string {
 
-    let sentence = new SentencesIs(valid);
-    sentence.type.push('negative');
-    sentence.value.push(subject, value.toString());
+    let sentence = SentencesIs(valid);
+    sentence.object.push('negative');
+    sentence.subject.push(subject, value.toString());
     return sentence.message;
 }
 

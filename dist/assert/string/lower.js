@@ -14,16 +14,16 @@
      * message for lower validation
      */
     function Lower(valid, value, minimum, inclusive, subject = '') {
-        const sentence = new sentences_is_1.default(valid, [subject, value.toString()]);
-        sentence.type = [minimum.toString()];
+        const sentence = sentences_is_1.default(valid, [subject, value.toString()]);
+        sentence.object = [minimum.toString()];
         if (inclusive) {
-            sentence.expectation = {
+            sentence.predicate = {
                 invalid: ['must lower or equal than'],
                 valid: ['is lower or equal than'],
             };
         }
         else {
-            sentence.expectation = {
+            sentence.predicate = {
                 invalid: ['must lower than'],
                 valid: ['is lower than'],
             };

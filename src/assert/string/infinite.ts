@@ -6,9 +6,9 @@ export default function Infinite(
     subject : string = ''
 ) : string {
 
-    const sentence = new SentencesIs(valid, [subject, value.toString()]);
+    const sentence = SentencesIs(valid, [subject, value.toString()]);
 
-    sentence.type = ['infinite'];
+    sentence.object = ['infinite'];
 
     return sentence.message;
 }

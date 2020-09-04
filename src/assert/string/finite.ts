@@ -1,5 +1,3 @@
-
-import Trim from "@dikac/t-string/trim";
 import SentencesIs from "@dikac/t-string/message/sentences-is";
 
 export default function Finite(
@@ -8,9 +6,9 @@ export default function Finite(
     subject : string = ''
 ) : string {
 
-    const sentence = new SentencesIs(valid, [subject, value.toString()]);
+    const sentence = SentencesIs(valid, [subject, value.toString()]);
 
-    sentence.type = ['finite'];
+    sentence.object = ['finite'];
 
     return sentence.message;
 }

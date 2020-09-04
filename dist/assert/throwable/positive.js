@@ -10,8 +10,8 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const positive_1 = require("../string/positive");
-    function Integer(number) {
-        return new Error(positive_1.default(false, number));
+    function Integer(number, subject) {
+        return new Error(positive_1.default(false, number, subject));
     }
     exports.default = Integer;
 });
