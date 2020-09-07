@@ -4,27 +4,47 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import GreaterObject from "./boolean/greater";
 import Inclusive from "../inclusive/inclusive";
+import Callback from "./callback";
+import ValueOf from "@dikac/t-value/value-of/value-of";
+import ToString from "@dikac/t-string/to-string";
+import SetGetter from "@dikac/t-object/value/set-getter";
 
 export default class Greater<ValueT extends number, MessageT>
-
     implements
-        Readonly<Inclusive & Value<ValueT> & Message<MessageT> & Validatable>,
-        Readonly<Minimum>
+        Readonly<Inclusive>,
+        Readonly<Value<ValueT>>,
+        Readonly<Message<MessageT>>,
+        Readonly<Validatable>,
+        Readonly<Minimum>,
+        ValueOf<number>,
+        ToString<number|void>
 {
-    readonly valid : boolean;
 
     constructor(
         readonly value : ValueT,
         readonly minimum : number,
         readonly inclusive : boolean,
-        private _message : (result:Readonly<Value<ValueT> & Inclusive & Minimum & Validatable>)=>MessageT
+        private messageFactory : (result:Readonly<Value<ValueT> & Inclusive & Minimum & Validatable>)=>MessageT
     ) {
+    }
 
-        this.valid = GreaterObject(this);
+    get valid () : boolean {
+
+        return SetGetter(this, 'valid', GreaterObject(this))
     }
 
     get message() : MessageT {
 
-        return this._message(this)
+        return SetGetter(this, 'message', this.messageFactory(this))
+    }
+
+    valueOf() : number {
+
+        return this.value;
+    }
+
+    toString(radix ?: number) : string {
+
+        return this.value.toString(radix);
     }
 }

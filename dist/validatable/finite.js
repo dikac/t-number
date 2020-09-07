@@ -4,14 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-validator/validatable/callback-function"], factory);
+        define(["require", "exports", "./callback"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const callback_function_1 = require("@dikac/t-validator/validatable/callback-function");
+    const callback_1 = require("./callback");
     function Finite(number, message) {
-        return callback_function_1.default(number, isFinite, message);
+        return new callback_1.default(number, isFinite, message);
     }
     exports.default = Finite;
 });

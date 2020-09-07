@@ -1,1 +1,1 @@
-{"version":3,"file":"finite.js","sourceRoot":"","sources":["../../src/validatable/finite.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,wFAAwE;IAKxE,SAAwB,MAAM,CAC1B,MAAe,EACf,OAAkE;QAElE,OAAO,2BAAQ,CAAC,MAAM,EAAE,QAAQ,EAAE,OAAO,CAAC,CAAC;IAC/C,CAAC;IALD,yBAKC"}
+{"version":3,"file":"finite.js","sourceRoot":"","sources":["../../src/validatable/finite.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,yCAAkC;IAOlC,SAAwB,MAAM,CAC1B,MAAe,EACf,OAAkE;QAGlE,OAAO,IAAI,kBAAQ,CAAC,MAAM,EAAE,QAAQ,EAAE,OAAO,CAAC,CAAC;IACnD,CAAC;IAND,yBAMC"}

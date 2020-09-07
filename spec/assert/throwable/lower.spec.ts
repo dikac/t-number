@@ -8,13 +8,13 @@ describe(`integer`,function() {
 
         it(`positive`, () => {
             let throwable = Lower(1, 10, false);
-            expect(throwable.message).toBe('value "1" must lower than "10"');
+            expect(throwable.message).toBe('1 must lower than 10');
             expect(throwable).toBeInstanceOf(Error);
         });
 
         it(`negative`, () => {
             let throwable = Lower(-1, -1, false);
-            expect(throwable.message).toBe('value "-1" must lower than "-1"');
+            expect(throwable.message).toBe('-1 must lower than -1');
             expect(throwable).toBeInstanceOf(Error);
         });
 
@@ -24,13 +24,13 @@ describe(`integer`,function() {
 
         it(`positive`, () => {
             let throwable = Lower(1, 1, true);
-            expect(throwable.message).toBe('value "1" must lower or equal than "1"');
+            expect(throwable.message).toBe('1 must lower or equal than 1');
             expect(throwable).toBeInstanceOf(Error);
         });
 
         it(`negative`, () => {
             let throwable = Lower(-1, -1, true);
-            expect(throwable.message).toBe('value "-1" must lower or equal than "-1"');
+            expect(throwable.message).toBe('-1 must lower or equal than -1');
             expect(throwable).toBeInstanceOf(Error);
         });
 
@@ -43,13 +43,13 @@ describe(`float`,function() {
 
         it(`positive`, () => {
             let throwable = Lower(1.1, 1.1, true);
-            expect(throwable.message).toBe('value "1.1" must lower or equal than "1.1"');
+            expect(throwable.message).toBe('1.1 must lower or equal than 1.1');
             expect(throwable).toBeInstanceOf(Error);
         });
 
         it(`negative`, () => {
             let throwable = Lower(-1.2, -1.1, true);
-            expect(throwable.message).toBe('value "-1.2" must lower or equal than "-1.1"');
+            expect(throwable.message).toBe('-1.2 must lower or equal than -1.1');
             expect(throwable).toBeInstanceOf(Error);
         });
 
@@ -59,13 +59,13 @@ describe(`float`,function() {
 
         it(`positive`, () => {
             let throwable = Lower(1.1, 1.1, false);
-            expect(throwable.message).toBe('value "1.1" must lower than "1.1"');
+            expect(throwable.message).toBe('1.1 must lower than 1.1');
             expect(throwable).toBeInstanceOf(Error);
         });
 
         it(`negative`, () => {
             let throwable = Lower(-1.2, -1.1, false);
-            expect(throwable.message).toBe('value "-1.2" must lower than "-1.1"');
+            expect(throwable.message).toBe('-1.2 must lower than -1.1');
             expect(throwable).toBeInstanceOf(Error);
         });
     });
@@ -77,13 +77,13 @@ describe(`infinity`,function() {
 
         it(`inclusive`, () => {
             let throwable = Lower(Infinity, Infinity, true);
-            expect(throwable.message).toBe('value "Infinity" must lower or equal than "Infinity"');
+            expect(throwable.message).toBe('Infinity must lower or equal than Infinity');
             expect(throwable).toBeInstanceOf(Error);
         });
 
         it(`negative`, () => {
             let throwable = Lower(-Infinity, -Infinity, true);
-            expect(throwable.message).toBe('value "-Infinity" must lower or equal than "-Infinity"');
+            expect(throwable.message).toBe('-Infinity must lower or equal than -Infinity');
             expect(throwable).toBeInstanceOf(Error);
         });
 
@@ -93,14 +93,14 @@ describe(`infinity`,function() {
 
         it(`positive`, () => {
             let throwable = Lower(Infinity, Infinity, false);
-            expect(throwable.message).toBe('value "Infinity" must lower than "Infinity"');
+            expect(throwable.message).toBe('Infinity must lower than Infinity');
             expect(throwable).toBeInstanceOf(Error);
 
         });
 
         it(`negative`, () => {
             let throwable = Lower(-Infinity, -Infinity, false);
-            expect(throwable.message).toBe('value "-Infinity" must lower than "-Infinity"');
+            expect(throwable.message).toBe('-Infinity must lower than -Infinity');
             expect(throwable).toBeInstanceOf(Error);
 
         });
@@ -112,14 +112,14 @@ describe(`nan`, () => {
 
     it(`inclusive`, () => {
         let throwable = Lower(NaN, NaN, true);
-        expect(throwable.message).toBe('value "NaN" must lower or equal than "NaN"');
+        expect(throwable.message).toBe('NaN must lower or equal than NaN');
         expect(throwable).toBeInstanceOf(Error);
 
     });
 
     it(`exclusive`, () => {
         let throwable = Lower(NaN, NaN, false);
-        expect(throwable.message).toBe('value "NaN" must lower than "NaN"');
+        expect(throwable.message).toBe('NaN must lower than NaN');
         expect(throwable).toBeInstanceOf(Error);
 
     });

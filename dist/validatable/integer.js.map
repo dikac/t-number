@@ -1,1 +1,1 @@
-{"version":3,"file":"integer.js","sourceRoot":"","sources":["../../src/validatable/integer.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,wFAAwE;IACxE,gDAAmD;IAKnD,SAAwB,OAAO,CAC3B,MAAe,EACf,OAAkE;QAGlE,OAAO,2BAAQ,CAAC,MAAM,EAAE,iBAAiB,EAAE,OAAO,CAAC,CAAC;IACxD,CAAC;IAND,0BAMC"}
+{"version":3,"file":"integer.js","sourceRoot":"","sources":["../../src/validatable/integer.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,yCAAkC;IAClC,gDAAmD;IAOnD,SAAwB,OAAO,CAC3B,MAAe,EACf,OAAkE;QAGlE,OAAO,IAAI,kBAAQ,CAAC,MAAM,EAAE,iBAAiB,EAAE,OAAO,CAAC,CAAC;IAC5D,CAAC;IAND,0BAMC"}

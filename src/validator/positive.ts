@@ -5,6 +5,8 @@ import Value from "@dikac/t-value/value";
 import PositiveValidatable from "../validatable/positive";
 import SimpleValidatable from "@dikac/t-validator/validatable/simple";
 import Instance from "@dikac/t-validator/validatable/validatable";
+import ValueOf from "@dikac/t-value/value-of/value-of";
+import ToString from "@dikac/t-string/to-string";
 
 export default class Positive<MessageT>
     implements
@@ -17,8 +19,10 @@ export default class Positive<MessageT>
     ) {
     }
 
-    validate<Argument extends number>(value: Argument): SimpleValidatable<number, Argument, number, Readonly<Instance<number, MessageT>>> {
+    validate<Argument extends number>(value: Argument):
+        SimpleValidatable<number, Argument, number, Readonly<Instance<number, MessageT>>>  & ValueOf<number> & ToString<number|void> {
 
-        return <SimpleValidatable<number, Argument, number, Readonly<Instance<number, MessageT>>>> PositiveValidatable(value, this.message);
+        return <SimpleValidatable<number, Argument, number, Readonly<Instance<number, MessageT>>>  & ValueOf<number> & ToString<number|void>>
+            PositiveValidatable(value, this.message);
     }
 }

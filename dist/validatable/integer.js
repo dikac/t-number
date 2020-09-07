@@ -4,15 +4,15 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-validator/validatable/callback-function", "../boolean/integer"], factory);
+        define(["require", "exports", "./callback", "../boolean/integer"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const callback_function_1 = require("@dikac/t-validator/validatable/callback-function");
+    const callback_1 = require("./callback");
     const integer_1 = require("../boolean/integer");
     function Integer(number, message) {
-        return callback_function_1.default(number, integer_1.default, message);
+        return new callback_1.default(number, integer_1.default, message);
     }
     exports.default = Integer;
 });

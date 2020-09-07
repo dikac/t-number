@@ -5,6 +5,8 @@ import Value from "@dikac/t-value/value";
 import FiniteValidatable from "../validatable/finite";
 import Instance from "@dikac/t-validator/validatable/validatable";
 import SimpleValidatable from "@dikac/t-validator/validatable/simple";
+import ValueOf from "@dikac/t-value/value-of/value-of";
+import ToString from "@dikac/t-string/to-string";
 
 export default class Finite<MessageT>
     implements
@@ -17,8 +19,9 @@ export default class Finite<MessageT>
     ) {
     }
 
-    validate<Argument extends number>(value: Argument): SimpleValidatable<number, Argument, number, Readonly<Instance<number, MessageT>>> {
+    validate<Argument extends number>(value: Argument): SimpleValidatable<number, Argument, number, Readonly<Instance<number, MessageT>>>  & ValueOf<number> & ToString<number|void> {
 
-        return <SimpleValidatable<number, Argument, number, Readonly<Instance<number, MessageT>>>> FiniteValidatable(value, this.message);
+        return <SimpleValidatable<number, Argument, number, Readonly<Instance<number, MessageT>>>  & ValueOf<number> & ToString<number|void>>
+            FiniteValidatable(value, this.message);
     }
 }

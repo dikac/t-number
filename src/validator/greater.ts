@@ -6,6 +6,8 @@ import GreaterValidatable from "../validatable/greater";
 import Inclusive from "../inclusive/inclusive";
 import Minimum from "../minimum/minimum";
 import SimpleValidatable from "@dikac/t-validator/validatable/simple";
+import ValueOf from "@dikac/t-value/value-of/value-of";
+import ToString from "@dikac/t-string/to-string";
 
 export default class Greater<MessageT>
     implements
@@ -21,8 +23,9 @@ export default class Greater<MessageT>
     ) {
     }
 
-    validate<Argument extends number>(value: Argument): SimpleValidatable<number, Argument, number, GreaterValidatable<Argument, MessageT>> {
+    validate<Argument extends number>(value: Argument):
+        SimpleValidatable<number, Argument, number, GreaterValidatable<Argument, MessageT>>  & ValueOf<number> & ToString<number|void> {
 
-        return <SimpleValidatable<number, Argument, number, GreaterValidatable<Argument, MessageT>>> new GreaterValidatable<Argument, MessageT>(value, this.minimum, this.inclusive, this.message);
+        return new GreaterValidatable<Argument, MessageT>(value, this.minimum, this.inclusive, this.message);
     }
 }
