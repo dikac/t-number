@@ -4,5 +4,5 @@ import FiniteAssert from "../../assert/string/finite";
 
 export default function Finite(object : Readonly<Value<number> & Validatable>) : string {
 
-    return FiniteAssert(object.valid, object.value)
+    return FiniteAssert(object.valid, object.value, 'value')
 }

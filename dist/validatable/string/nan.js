@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const nan_1 = require("../../assert/string/nan");
     function Nan(object) {
-        return nan_1.default(object.valid, object.value);
+        return nan_1.default(object.valid, object.value, 'value');
     }
     exports.default = Nan;
 });

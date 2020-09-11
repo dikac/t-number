@@ -4,11 +4,9 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import LowerFromObject from "./boolean/lower";
 import Inclusive from "../inclusive/inclusive";
-import Minimum from "../minimum/minimum";
 import ValueOf from "@dikac/t-value/value-of/value-of";
 import ToString from "@dikac/t-string/to-string";
 import SetGetter from "@dikac/t-object/value/set-getter";
-import GreaterObject from "./boolean/greater";
 
 export default class Lower<ValueT extends number, MessageT>
     implements

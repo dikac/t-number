@@ -1,4 +1,4 @@
-import SentencesIs from "@dikac/t-string/message/sentences-is";
+import SentencesMust from "@dikac/t-string/message/sentences-must";
 
 export default function Integer(
     valid : boolean,
@@ -6,9 +6,16 @@ export default function Integer(
     subject : string = '',
 ) : string {
 
-    let sentence = SentencesIs(valid);
-    sentence.object.push('integer');
-    sentence.subject.push(subject, value.toString());
+    const sentence = SentencesMust(valid, [subject]);
+
+    sentence.expect = ['integer number'];
+    sentence.comma.push('expect');
+
+    if(!valid) {
+
+        sentence.actual.push('actual', `"${value.toString()}"`);
+    }
+
     return sentence.message;
 }
 

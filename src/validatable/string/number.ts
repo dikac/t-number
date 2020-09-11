@@ -4,5 +4,5 @@ import NumberAssert from "../../assert/string/number";
 
 export default function Number(object : Readonly<Value & Validatable>) : string {
 
-    return NumberAssert(object.valid, object.value)
+    return NumberAssert(object.valid, object.value, 'value')
 }

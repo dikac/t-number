@@ -4,5 +4,5 @@ import NanAssert from "../../assert/string/nan";
 
 export default function Nan(object : Readonly<Value<number> & Validatable>) : string {
 
-    return NanAssert(object.valid, object.value)
+    return NanAssert(object.valid, object.value, 'value')
 }

@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const infinite_1 = require("../../assert/string/infinite");
     function Infinite(object) {
-        return infinite_1.default(object.valid, object.value);
+        return infinite_1.default(object.valid, object.value, 'value');
     }
     exports.default = Infinite;
 });

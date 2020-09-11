@@ -9,6 +9,6 @@ import GreaterParameter from "../../assert/string/greater";
  */
 export default function Greater(instance : Readonly<Inclusive & Minimum & Value<number> & Validatable>) : string {
 
-    return GreaterParameter(instance.valid, instance.value, instance.minimum, instance.inclusive);
+    return GreaterParameter(instance.valid, instance.value, instance.minimum, instance.inclusive, 'value');
 
 }

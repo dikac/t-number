@@ -4,30 +4,30 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-string/message/sentences-is"], factory);
+        define(["require", "exports", "@dikac/t-string/message/sentences"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const sentences_is_1 = require("@dikac/t-string/message/sentences-is");
     /**
      * message for lower validation
      */
-    function Lower(valid, value, minimum, inclusive, subject = '') {
-        const sentence = sentences_is_1.default(valid, [subject, value.toString()]);
-        sentence.object = [minimum.toString()];
-        if (inclusive) {
-            sentence.predicate = {
-                invalid: ['must lower or equal than'],
-                valid: ['is lower or equal than'],
-            };
+    const sentences_1 = require("@dikac/t-string/message/sentences");
+    function Lower(valid, value, minimum, inclusive, subject = 'number') {
+        const sentence = new sentences_1.default(valid);
+        sentence.subject.push(subject);
+        sentence.comma.push('expect');
+        if (valid) {
+            sentence.accept.push(`is lower`);
         }
         else {
-            sentence.predicate = {
-                invalid: ['must lower than'],
-                valid: ['is lower than'],
-            };
+            sentence.reject.push(`must lower`);
         }
+        if (inclusive) {
+            sentence.expect.push(`or equal`);
+        }
+        sentence.expect.push('than', `"${minimum.toString()}"`);
+        sentence.actual.push('actual', `"${value.toString()}"`);
         return sentence.message;
     }
     exports.default = Lower;

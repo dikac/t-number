@@ -9,6 +9,6 @@ import LowerParameter from "../../assert/string/lower";
  */
 export default function Lower(instance : Readonly<Inclusive & Maximum & Value<number> & Validatable>) : string {
 
-    return LowerParameter(instance.valid, instance.value, instance.maximum, instance.inclusive);
+    return LowerParameter(instance.valid, instance.value, instance.maximum, instance.inclusive, 'value');
 
 }

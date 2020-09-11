@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const finite_1 = require("../../assert/string/finite");
     function Finite(object) {
-        return finite_1.default(object.valid, object.value);
+        return finite_1.default(object.valid, object.value, 'value');
     }
     exports.default = Finite;
 });

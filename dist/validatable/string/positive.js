@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const positive_1 = require("../../assert/string/positive");
     function Positive(object) {
-        return positive_1.default(object.valid, object.value);
+        return positive_1.default(object.valid, object.value, 'value');
     }
     exports.default = Positive;
 });

@@ -1,4 +1,5 @@
-import SentencesIs from "@dikac/t-string/message/sentences-is";
+import SentencesMust from "@dikac/t-string/message/sentences-must";
+
 
 export default function Infinite(
     valid : boolean,
@@ -6,9 +7,15 @@ export default function Infinite(
     subject : string = ''
 ) : string {
 
-    const sentence = SentencesIs(valid, [subject, value.toString()]);
+    const sentence = SentencesMust(valid, [subject]);
 
-    sentence.object = ['infinite'];
+    sentence.expect = ['infinite number'];
+    sentence.comma.push('expect');
+
+    if(!valid) {
+
+        sentence.actual.push('actual', `"${value.toString()}"`);
+    }
 
     return sentence.message;
 }

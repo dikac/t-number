@@ -1,55 +1,11 @@
 import Finite from "../../../dist/assert/throwable/finite";
+import Message from "../../../dist/assert/string/finite";
 
 it("enable console log", () => {spyOn(console, 'log').and.callThrough()});
 
-describe('infinity',() =>{
+it(`check value`, () => {
 
-    it(`positive`, () => {
-        let throwable = Finite(Infinity);
-        expect(throwable.message).toBe('Infinity is not finite');
-        expect(throwable).toBeInstanceOf(Error);
-    });
-
-    it(`negative`, () => {
-        let throwable = Finite(-Infinity);
-        expect(throwable.message).toBe('-Infinity is not finite');
-        expect(throwable).toBeInstanceOf(Error);
-    });
-});
-
-describe('integer',() =>{
-
-    it(`positive`, () => {
-       let throwable = Finite(1);
-        expect(throwable.message).toBe('1 is not finite');
-        expect(throwable).toBeInstanceOf(Error);
-    });
-
-    it(`negative`, () => {
-       let throwable = Finite(-1);
-        expect(throwable.message).toBe('-1 is not finite');
-        expect(throwable).toBeInstanceOf(Error);
-    });
-});
-
-describe('float',() =>{
-
-    it(`positive`, () => {
-        let throwable = Finite(1.1);
-        expect(throwable.message).toBe('1.1 is not finite');
-        expect(throwable).toBeInstanceOf(Error);
-    });
-
-    it(`negative`, () => {
-        let throwable = Finite(-1.1);
-        expect(throwable.message).toBe('-1.1 is not finite');
-        expect(throwable).toBeInstanceOf(Error);
-    });
-});
-
-it('nan',() =>{
-
-    let throwable = Finite(NaN);
-    expect(throwable.message).toBe('NaN is not finite');
+    let throwable = Finite(Infinity);
+    expect(throwable.message).toBe(Message(false, Infinity));
     expect(throwable).toBeInstanceOf(Error);
 });

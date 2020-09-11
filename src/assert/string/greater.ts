@@ -1,4 +1,4 @@
-import SentencesIs from "@dikac/t-string/message/sentences-is";
+import Sentences from "@dikac/t-string/message/sentences";
 
 /**
  * message for greater validation
@@ -8,28 +8,32 @@ export default function Greater(
     value : number,
     minimum : number,
     inclusive : boolean,
-    subject : string = ''
+    subject : string = 'number'
 ) : string {
 
-    const sentence = SentencesIs(valid, [subject, value.toString()]);
+    const sentence = new Sentences(valid);
 
-    sentence.object = [minimum.toString()];
+    sentence.subject.push(subject);
 
-    if(inclusive) {
+    sentence.comma.push('expect');
 
-        sentence.predicate = {
-            invalid:['must greater or equal than'],
-            valid:['is greater or equal than'],
-        }
+    if(valid) {
+
+        sentence.accept.push(`is greater`);
 
     } else {
 
-        sentence.predicate = {
-            invalid:['must greater than'],
-            valid:['is greater than'],
-        }
+        sentence.reject.push(`must greater`);
     }
 
+    if(inclusive) {
+
+        sentence.expect.push(`or equal`);
+    }
+
+    sentence.expect.push('than', `"${minimum.toString()}"`);
+
+    sentence.actual.push('actual', `"${value.toString()}"`)
 
     return sentence.message;
 }

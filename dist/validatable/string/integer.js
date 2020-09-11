@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const integer_1 = require("../../assert/string/integer");
     function Integer(object) {
-        return integer_1.default(object.valid, object.value);
+        return integer_1.default(object.valid, object.value, 'value');
     }
     exports.default = Integer;
 });

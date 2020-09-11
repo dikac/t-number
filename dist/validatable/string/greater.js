@@ -14,7 +14,7 @@
      * message for between validation
      */
     function Greater(instance) {
-        return greater_1.default(instance.valid, instance.value, instance.minimum, instance.inclusive);
+        return greater_1.default(instance.valid, instance.value, instance.minimum, instance.inclusive, 'value');
     }
     exports.default = Greater;
 });

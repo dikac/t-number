@@ -1,4 +1,4 @@
-import SentencesIs from "@dikac/t-string/message/sentences-is";
+import SentencesMust from "@dikac/t-string/message/sentences-must";
 
 export default function Nan(
     valid : boolean,
@@ -6,10 +6,15 @@ export default function Nan(
     subject : string = '',
 ) : string {
 
-    let sentence = SentencesIs(valid);
-    sentence.object.push('NaN');
-    sentence.subject.push(subject, value.toString());
+    const sentence = SentencesMust(valid, [subject]);
+
+    sentence.expect = ['NaN'];
+    sentence.comma.push('expect');
+
+    if (!valid) {
+
+        sentence.actual.push('actual', `"${value.toString()}"`);
+    }
 
     return sentence.message;
 }
-

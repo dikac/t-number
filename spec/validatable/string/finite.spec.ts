@@ -1,49 +1,11 @@
 import Finite from "../../../dist/validatable/string/finite";
 
 it("enable console log", () => {spyOn(console, 'log').and.callThrough()});
-
-describe('infinity',() =>{
-
-    it(`positive`, () => {
-        expect(Finite({value:Infinity, valid:true})).toBe('Infinity is finite');
-        expect(Finite({value:Infinity, valid:false})).toBe('Infinity is not finite');
-    });
-
-    it(`negative`, () => {
-        expect(Finite({value:-Infinity, valid:true})).toBe('-Infinity is finite');
-        expect(Finite({value:-Infinity, valid:false})).toBe('-Infinity is not finite');
-    });
+it(`valid`, () => {
+    expect(Finite({valid:true, value:Infinity})).toBe('value is finite number.');
 });
 
-describe('integer',() =>{
-
-    it(`positive`, () => {
-        expect(Finite({value:1, valid:true})).toBe('1 is finite');
-        expect(Finite({value:1, valid:false})).toBe('1 is not finite');
-    });
-
-    it(`negative`, () => {
-        expect(Finite({value:-1, valid:true})).toBe('-1 is finite');
-        expect(Finite({value:-1, valid:false})).toBe('-1 is not finite');
-    });
+it(`invalid`, () => {
+    expect(Finite({valid:false, value:1})).toBe('value must finite number, actual "1".');
 });
 
-describe('float',() =>{
-
-    it(`float`, () => {
-        expect(Finite({value:1.1, valid:true})).toBe('1.1 is finite');
-        expect(Finite({value:1.1, valid:false})).toBe('1.1 is not finite');
-    });
-
-    it(`float`, () => {
-        expect(Finite({value:-1.1, valid:true})).toBe('-1.1 is finite');
-        expect(Finite({value:-1.1, valid:false})).toBe('-1.1 is not finite');
-    });
-});
-
-it('nan',() =>{
-
-    expect(Finite({value:NaN, valid:true})).toBe('NaN is finite');
-    expect(Finite({value:NaN, valid:false})).toBe('NaN is not finite');
-
-});

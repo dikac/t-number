@@ -1,35 +1,39 @@
-import SentencesIs from "@dikac/t-string/message/sentences-is";
-
 /**
  * message for lower validation
  */
+import Sentences from "@dikac/t-string/message/sentences";
+
 export default function Lower(
     valid : boolean,
     value : number,
     minimum : number,
     inclusive : boolean,
-    subject : string = ''
+    subject : string = 'number'
 ) : string {
 
-    const sentence = SentencesIs(valid, [subject, value.toString()]);
+    const sentence = new Sentences(valid);
 
-    sentence.object = [minimum.toString()];
+    sentence.subject.push(subject);
 
-    if(inclusive) {
+    sentence.comma.push('expect');
 
-        sentence.predicate = {
-            invalid:['must lower or equal than'],
-            valid:['is lower or equal than'],
-        }
+    if(valid) {
+
+        sentence.accept.push(`is lower`);
 
     } else {
 
-        sentence.predicate = {
-            invalid:['must lower than'],
-            valid:['is lower than'],
-        }
+        sentence.reject.push(`must lower`);
     }
 
+    if(inclusive) {
+
+        sentence.expect.push(`or equal`);
+    }
+
+    sentence.expect.push('than', `"${minimum.toString()}"`);
+
+    sentence.actual.push('actual', `"${value.toString()}"`)
 
     return sentence.message;
 }

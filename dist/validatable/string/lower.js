@@ -14,7 +14,7 @@
      * message for between validation
      */
     function Lower(instance) {
-        return lower_1.default(instance.valid, instance.value, instance.maximum, instance.inclusive);
+        return lower_1.default(instance.valid, instance.value, instance.maximum, instance.inclusive, 'value');
     }
     exports.default = Lower;
 });
