@@ -6,7 +6,7 @@ import LowerFromObject from "./boolean/lower";
 import Inclusive from "../inclusive/inclusive";
 import ValueOf from "@dikac/t-value/value-of/value-of";
 import ToString from "@dikac/t-string/to-string";
-import SetGetter from "@dikac/t-object/value/set-getter";
+import SetGetter from "@dikac/t-object/value/value/set-getter";
 
 export default class Lower<ValueT extends number, MessageT>
     implements

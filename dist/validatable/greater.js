@@ -4,13 +4,13 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./boolean/greater", "@dikac/t-object/value/set-getter"], factory);
+        define(["require", "exports", "./boolean/greater", "@dikac/t-object/value/value/set-getter"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const greater_1 = require("./boolean/greater");
-    const set_getter_1 = require("@dikac/t-object/value/set-getter");
+    const set_getter_1 = require("@dikac/t-object/value/value/set-getter");
     class Greater {
         constructor(value, minimum, inclusive, messageFactory) {
             this.value = value;
