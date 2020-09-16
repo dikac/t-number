@@ -12,6 +12,13 @@
     const number_1 = require("../boolean/number");
     const callback_1 = require("@dikac/t-function/assert/callback");
     const number_2 = require("./throwable/number");
+    /**
+     * assert if {@param value} is number type
+     * @param value
+     *
+     * @param error
+     * error factory
+     */
     function Number(value, error = number_2.default) {
         callback_1.default(value, number_1.default, error);
     }

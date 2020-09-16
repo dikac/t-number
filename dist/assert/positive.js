@@ -12,8 +12,15 @@
     const positive_1 = require("../boolean/positive");
     const positive_2 = require("./throwable/positive");
     const callback_1 = require("@dikac/t-function/assert/callback");
-    function Positive(value, error = positive_2.default) {
-        callback_1.default(value, positive_1.default, error);
+    /**
+     * assert if {@param number} is positive
+     *
+     * @param number
+     * @param error
+     * error factory
+     */
+    function Positive(number, error = positive_2.default) {
+        callback_1.default(number, positive_1.default, error);
     }
     exports.default = Positive;
 });

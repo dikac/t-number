@@ -1,11 +1,17 @@
 import FiniteError from "./throwable/finite";
 import Callback from "@dikac/t-function/assert/callback";
-
+/**
+ * assert if {@param number} is finite
+ *
+ * @param number
+ * @param error
+ * error factory
+ */
 export default function Finite(
-    value : number,
+    number : number,
     error : (value:number)=> Error = FiniteError
-) : asserts value is number {
+) : asserts number is number {
 
-    Callback(value, isFinite, error);
+    Callback(number, isFinite, error);
 
 }

@@ -2,6 +2,12 @@ import Greater from "./boolean/greater";
 import Lower from "./boolean/lower";
 import LowerThanMaximum from "./minimum/assert/lower-than-maximum";
 
+/**
+ * get random integer
+ * @param minimum
+ * @param maximum
+ * @param inclusive
+ */
 export default function RandomInteger (minimum : number, maximum : number, inclusive : boolean = true) : number {
 
     LowerThanMaximum({

@@ -12,8 +12,17 @@
     const lower_1 = require("../boolean/lower");
     const callback_1 = require("@dikac/t-function/assert/callback");
     const lower_2 = require("./throwable/lower");
-    function Lower(value, minimum, inclusive, error = lower_2.default) {
-        callback_1.default(value, lower_1.default, error, minimum, inclusive);
+    /**
+     * assert if {@param number} is lower than {@param maximum} or equal if {@param inclusive} is true
+     *
+     * @param number
+     * @param maximum
+     * @param inclusive
+     * @param error
+     * error factory
+     */
+    function Lower(number, maximum, inclusive, error = lower_2.default) {
+        callback_1.default(number, lower_1.default, error, maximum, inclusive);
     }
     exports.default = Lower;
 });

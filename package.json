@@ -5,12 +5,12 @@
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
     "@dikac/t-boolean": "^0.9.4",
-    "@dikac/t-function": "^0.12.5",
+    "@dikac/t-function": "^0.12.6",
     "@dikac/t-message": "^0.10.5",
-    "@dikac/t-object": "^0.34.1",
+    "@dikac/t-object": "^0.34.2",
     "@dikac/t-string": "^0.14.2",
     "@dikac/t-validatable": "^0.18.10",
-    "@dikac/t-validator": "^0.16.7",
+    "@dikac/t-validator": "^0.16.8",
     "@dikac/t-value": "^0.12.8",
     "ts-toolbelt": "^6.15.5"
   },

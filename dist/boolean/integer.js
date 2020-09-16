@@ -9,9 +9,13 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * check if {@param number} is infinite
+     * @param number
+     */
     function Integer(number) {
         if (isFinite(number)) {
-            return number === Math.floor(number);
+            return number === Math.ceil(number);
         }
         return false;
     }

@@ -12,6 +12,12 @@
     const greater_1 = require("./boolean/greater");
     const lower_1 = require("./boolean/lower");
     const lower_than_maximum_1 = require("./minimum/assert/lower-than-maximum");
+    /**
+     * get random integer
+     * @param minimum
+     * @param maximum
+     * @param inclusive
+     */
     function RandomInteger(minimum, maximum, inclusive = true) {
         lower_than_maximum_1.default({
             maximum: maximum,

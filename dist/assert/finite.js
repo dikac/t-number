@@ -11,8 +11,15 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const finite_1 = require("./throwable/finite");
     const callback_1 = require("@dikac/t-function/assert/callback");
-    function Finite(value, error = finite_1.default) {
-        callback_1.default(value, isFinite, error);
+    /**
+     * assert if {@param number} is finite
+     *
+     * @param number
+     * @param error
+     * error factory
+     */
+    function Finite(number, error = finite_1.default) {
+        callback_1.default(number, isFinite, error);
     }
     exports.default = Finite;
 });

@@ -1,1 +1,1 @@
-{"version":3,"file":"number.js","sourceRoot":"","sources":["../../src/boolean/number.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,SAAwB,MAAM,CAAC,KAAe;QAE1C,OAAO,OAAO,KAAK,KAAK,QAAQ,CAAC;IACrC,CAAC;IAHD,yBAGC"}
+{"version":3,"file":"number.js","sourceRoot":"","sources":["../../src/boolean/number.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA;;;OAGG;IACH,SAAwB,MAAM,CAAC,KAAe;QAE1C,OAAO,OAAO,KAAK,KAAK,QAAQ,CAAC;IACrC,CAAC;IAHD,yBAGC"}

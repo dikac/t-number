@@ -12,8 +12,17 @@
     const greater_1 = require("../boolean/greater");
     const callback_1 = require("@dikac/t-function/assert/callback");
     const greater_2 = require("./throwable/greater");
-    function Greater(value, minimum, inclusive, error = greater_2.default) {
-        callback_1.default(value, greater_1.default, error, minimum, inclusive);
+    /**
+     * assert if {@param number} is greater than {@param minimum} or equal if {@param inclusive} is true
+     *
+     * @param number
+     * @param minimum
+     * @param inclusive
+     * @param error
+     * @constructor
+     */
+    function Greater(number, minimum, inclusive, error = greater_2.default) {
+        callback_1.default(number, greater_1.default, error, minimum, inclusive);
     }
     exports.default = Greater;
 });

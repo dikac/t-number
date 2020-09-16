@@ -1,11 +1,17 @@
 import NanError from "./throwable/nan";
 import Callback from "@dikac/t-function/assert/callback";
-
+/**
+ * assert if {@param number} is NaN
+ *
+ * @param number
+ * @param error
+ * error factory
+ */
 export default function Nan(
-    value : number,
+    number : number,
     error : (value:number)=> Error = NanError
-) : asserts value is number {
+) : asserts number is number {
 
-    Callback(value, isNaN, error);
+    Callback(number, isNaN, error);
 
 }

@@ -1,12 +1,18 @@
 import IsNegative from "../boolean/negative";
 import NegativeError from "./throwable/negative";
 import Callback from "@dikac/t-function/assert/callback";
-
+/**
+ * assert if {@param number} is negative
+ *
+ * @param number
+ * @param error
+ * error factory
+ */
 export default function Negative(
-    value : number,
+    number : number,
     error : (value:number)=> Error = NegativeError
-) : asserts value is number {
+) : asserts number is number {
 
-    Callback(value, IsNegative, error);
+    Callback(number, IsNegative, error);
 
 }

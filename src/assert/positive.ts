@@ -2,11 +2,18 @@ import IsPositive from "../boolean/positive";
 import PositiveError from "./throwable/positive";
 import Callback from "@dikac/t-function/assert/callback";
 
+/**
+ * assert if {@param number} is positive
+ *
+ * @param number
+ * @param error
+ * error factory
+ */
 export default function Positive(
-    value : number,
+    number : number,
     error : (value:number)=> Error = PositiveError
-) : asserts value is number {
+) : asserts number is number {
 
-    Callback(value, IsPositive, error);
+    Callback(number, IsPositive, error);
 
 }

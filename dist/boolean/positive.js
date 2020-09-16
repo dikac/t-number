@@ -9,6 +9,10 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * check if {@param number} is positive
+     * @param number
+     */
     function Positive(number) {
         return number > 0;
     }

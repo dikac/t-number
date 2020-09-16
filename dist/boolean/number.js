@@ -9,6 +9,10 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * check if {@param value} is number type
+     * @param value
+     */
     function Number(value) {
         return typeof value === "number";
     }

@@ -9,6 +9,10 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * check if {@param number} is infinite
+     * @param number
+     */
     function Infinite(number) {
         switch (number) {
             case Number.POSITIVE_INFINITY:

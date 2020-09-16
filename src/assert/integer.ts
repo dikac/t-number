@@ -1,11 +1,17 @@
 import IsInteger from "../boolean/integer";
 import IntegerError from "./throwable/integer";
 import Callback from "@dikac/t-function/assert/callback";
-
+/**
+ * assert if {@param number} is integer
+ * @param number
+ *
+ * @param error
+ * error factory
+ */
 export default function Integer(
-    value : number,
+    number : number,
     error : (value:number)=> Error = IntegerError
-) : asserts value is number {
+) : asserts number is number {
 
-    Callback(value, IsInteger, error);
+    Callback(number, IsInteger, error);
 }

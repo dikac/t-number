@@ -12,8 +12,15 @@
     const integer_1 = require("../boolean/integer");
     const integer_2 = require("./throwable/integer");
     const callback_1 = require("@dikac/t-function/assert/callback");
-    function Integer(value, error = integer_2.default) {
-        callback_1.default(value, integer_1.default, error);
+    /**
+     * assert if {@param number} is integer
+     * @param number
+     *
+     * @param error
+     * error factory
+     */
+    function Integer(number, error = integer_2.default) {
+        callback_1.default(number, integer_1.default, error);
     }
     exports.default = Integer;
 });

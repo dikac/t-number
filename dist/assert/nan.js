@@ -11,8 +11,15 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const nan_1 = require("./throwable/nan");
     const callback_1 = require("@dikac/t-function/assert/callback");
-    function Nan(value, error = nan_1.default) {
-        callback_1.default(value, isNaN, error);
+    /**
+     * assert if {@param number} is NaN
+     *
+     * @param number
+     * @param error
+     * error factory
+     */
+    function Nan(number, error = nan_1.default) {
+        callback_1.default(number, isNaN, error);
     }
     exports.default = Nan;
 });
