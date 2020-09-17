@@ -1,19 +1,6 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./callback", "../boolean/integer"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const callback_1 = require("./callback");
-    const integer_1 = require("../boolean/integer");
-    function Integer(number, message) {
-        return new callback_1.default(number, integer_1.default, message);
-    }
-    exports.default = Integer;
-});
+import Callback from "./callback";
+import IntegerValidation from "../boolean/integer";
+export default function Integer(number, message) {
+    return new Callback(number, IntegerValidation, message);
+}
 //# sourceMappingURL=integer.js.map

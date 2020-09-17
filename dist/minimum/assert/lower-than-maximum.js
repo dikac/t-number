@@ -1,20 +1,7 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../boolean/lower-than-maximum", "./throwable/lower-than-maximum", "@dikac/t-function/assert/callback"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const lower_than_maximum_1 = require("../boolean/lower-than-maximum");
-    const lower_than_maximum_2 = require("./throwable/lower-than-maximum");
-    const callback_1 = require("@dikac/t-function/assert/callback");
-    function LowerThanMaximum(object, error = lower_than_maximum_2.default) {
-        callback_1.default(object, lower_than_maximum_1.default, error);
-    }
-    exports.default = LowerThanMaximum;
-});
+import LowerThanMaximumBoolean from "../boolean/lower-than-maximum";
+import LowerThanMaximumError from "./throwable/lower-than-maximum";
+import Callback from "@dikac/t-function/assert/callback";
+export default function LowerThanMaximum(object, error = LowerThanMaximumError) {
+    Callback(object, LowerThanMaximumBoolean, error);
+}
 //# sourceMappingURL=lower-than-maximum.js.map

@@ -1,18 +1,5 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../string/number"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const number_1 = require("../string/number");
-    function Number(number, subject, conversion) {
-        return new Error(number_1.default(false, number, subject, conversion));
-    }
-    exports.default = Number;
-});
+import NumberType from "../string/number";
+export default function Number(number, subject, conversion) {
+    return new Error(NumberType(false, number, subject, conversion));
+}
 //# sourceMappingURL=number.js.map

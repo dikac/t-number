@@ -1,32 +1,19 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import MergeWrapper from "@dikac/t-validator/validatable/readonly-merge";
+import MessageCallback from "@dikac/t-validator/validatable/callback-function";
+import GreaterThanMinimumFunction from "../boolean/greater-than-minimum";
+export default class GreaterThanMinimum extends MergeWrapper {
+    constructor(object, message) {
+        let container = {
+            maximum: object.maximum,
+            minimum: object.minimum,
+            inclusive: object.inclusive,
+            value: object
+        };
+        let msg = MessageCallback(container, GreaterThanMinimumFunction, () => message(this));
+        super(container, msg, msg);
+        this.minimum = object.minimum;
+        this.maximum = object.maximum;
+        this.inclusive = object.inclusive;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-validator/validatable/readonly-merge", "@dikac/t-validator/validatable/callback-function", "../boolean/greater-than-minimum"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const readonly_merge_1 = require("@dikac/t-validator/validatable/readonly-merge");
-    const callback_function_1 = require("@dikac/t-validator/validatable/callback-function");
-    const greater_than_minimum_1 = require("../boolean/greater-than-minimum");
-    class GreaterThanMinimum extends readonly_merge_1.default {
-        constructor(object, message) {
-            let container = {
-                maximum: object.maximum,
-                minimum: object.minimum,
-                inclusive: object.inclusive,
-                value: object
-            };
-            let msg = callback_function_1.default(container, greater_than_minimum_1.default, () => message(this));
-            super(container, msg, msg);
-            this.minimum = object.minimum;
-            this.maximum = object.maximum;
-            this.inclusive = object.inclusive;
-        }
-    }
-    exports.default = GreaterThanMinimum;
-});
+}
 //# sourceMappingURL=greater-than-minimum.js.map

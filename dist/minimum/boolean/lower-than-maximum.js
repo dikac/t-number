@@ -1,18 +1,5 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/greater"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const greater_1 = require("../../boolean/greater");
-    function LowerThanMaximum(object) {
-        return greater_1.default(object.maximum, object.minimum, object.inclusive);
-    }
-    exports.default = LowerThanMaximum;
-});
+import Greater from "../../boolean/greater";
+export default function LowerThanMaximum(object) {
+    return Greater(object.maximum, object.minimum, object.inclusive);
+}
 //# sourceMappingURL=lower-than-maximum.js.map

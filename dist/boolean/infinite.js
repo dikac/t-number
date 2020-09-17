@@ -1,26 +1,13 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+/**
+ * check if {@param number} is infinite
+ * @param number
+ */
+export default function Infinite(number) {
+    switch (number) {
+        case Number.POSITIVE_INFINITY:
+        case Number.NEGATIVE_INFINITY:
+            return true;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * check if {@param number} is infinite
-     * @param number
-     */
-    function Infinite(number) {
-        switch (number) {
-            case Number.POSITIVE_INFINITY:
-            case Number.NEGATIVE_INFINITY:
-                return true;
-        }
-        return false;
-    }
-    exports.default = Infinite;
-});
+    return false;
+}
 //# sourceMappingURL=infinite.js.map

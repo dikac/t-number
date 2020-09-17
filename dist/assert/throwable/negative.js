@@ -1,18 +1,5 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../string/negative"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const negative_1 = require("../string/negative");
-    function Integer(number, subject) {
-        return new Error(negative_1.default(false, number));
-    }
-    exports.default = Integer;
-});
+import NegativeType from "../string/negative";
+export default function Integer(number, subject) {
+    return new Error(NegativeType(false, number));
+}
 //# sourceMappingURL=negative.js.map
