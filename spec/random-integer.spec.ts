@@ -5,7 +5,7 @@ it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
 describe(`iterative`,function() {
 
-    for(let i = 0; i <= 100; i++) {
+    for(let i = 1; i <= 100; i++) {
 
         describe(`inclusive`,function() {
 
