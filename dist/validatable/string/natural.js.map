@@ -1,0 +1,1 @@
+{"version":3,"file":"natural.js","sourceRoot":"","sources":["../../../src/validatable/string/natural.ts"],"names":[],"mappings":"AAEA,OAAO,aAAa,MAAM,6BAA6B,CAAC;AAExD,MAAM,CAAC,OAAO,UAAU,OAAO,CAAC,MAA8C;IAE1E,OAAO,aAAa,CAAC,MAAM,CAAC,KAAK,EAAE,MAAM,CAAC,KAAK,EAAE,OAAO,CAAC,CAAA;AAC7D,CAAC"}
