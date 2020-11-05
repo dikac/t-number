@@ -1,6 +1,4 @@
 export default function Sum(...numbers) {
-    let total = 0;
-    numbers.forEach(number => total += number);
-    return total;
+    return numbers.reduce((previous, current) => previous + current);
 }
 //# sourceMappingURL=sum.js.map
