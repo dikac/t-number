@@ -5,36 +5,39 @@ it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
 describe(`iterative`,function() {
 
-    for(let i = 1; i <= 100; i++) {
+    const min = -50;
+    const max = 50;
+
+    for(let i = min; i <= max; i++) {
 
         describe(`inclusive`,function() {
 
-            it(`result 0 - ${i}`, () => {
+            it(`result ${min - 1} - ${i}`, () => {
                 {
-                    let random = RandomInteger(0, i);
+                    let random = RandomInteger(min - 1, i);
                     expect(random).toBeLessThanOrEqual(i);
-                    expect(random).toBeGreaterThanOrEqual(0);
+                    expect(random).toBeGreaterThanOrEqual(min - 1);
                 }
 
                 {
-                    let random = RandomIntegerFromObject({minimum:0, maximum:i, inclusive : true});
+                    let random = RandomIntegerFromObject({minimum:min - 1, maximum:i, inclusive : true});
                     expect(random).toBeLessThanOrEqual(i);
-                    expect(random).toBeGreaterThanOrEqual(0);
+                    expect(random).toBeGreaterThanOrEqual(min - 1);
                 }
 
             });
 
-            it(`result 50 - ${i+50}`, () => {
+            it(`result ${min + max} - ${i+max}`, () => {
                 {
-                    let random = RandomInteger(50, i+50);
-                    expect(random).toBeLessThanOrEqual(i + 50);
-                    expect(random).toBeGreaterThanOrEqual(50);
+                    let random = RandomInteger(min + max, i+max);
+                    expect(random).toBeLessThanOrEqual(i + max);
+                    expect(random).toBeGreaterThanOrEqual(min + max);
                 }
 
                 {
-                    let random = RandomIntegerFromObject({minimum:50, maximum: i + 50});
-                    expect(random).toBeLessThanOrEqual(i + 50);
-                    expect(random).toBeGreaterThanOrEqual(50);
+                    let random = RandomIntegerFromObject({minimum:min+max, maximum: i + max});
+                    expect(random).toBeLessThanOrEqual(i + max);
+                    expect(random).toBeGreaterThanOrEqual(min + max);
                 }
             });
         });
@@ -43,32 +46,32 @@ describe(`iterative`,function() {
 
             let val1 = i + 2;
 
-            it(`result 0 - ${val1}`, () => {
+            it(`result ${min} - ${val1}`, () => {
                 {
-                    let random = RandomInteger(0, val1, false);
+                    let random = RandomInteger(min, val1, false);
                     expect(random).toBeLessThan(val1);
-                    expect(random).toBeGreaterThan(0);
+                    expect(random).toBeGreaterThan(min);
                 }
 
                 {
-                    let random = RandomIntegerFromObject({minimum: 0, maximum: val1, inclusive: false});
+                    let random = RandomIntegerFromObject({minimum: min, maximum: val1, inclusive: false});
                     expect(random).toBeLessThan(val1);
-                    expect(random).toBeGreaterThan(0);
+                    expect(random).toBeGreaterThan(min);
                 }
             });
 
             let val2 = i + 52;
-            it(`result 50 - ${val2}`, () => {
+            it(`result ${min} - ${val2}`, () => {
                 {
-                    let random = RandomInteger(50, val2, false);
+                    let random = RandomInteger(min, val2, false);
                     expect(random).toBeLessThan(val2);
-                    expect(random).toBeGreaterThan(50);
+                    expect(random).toBeGreaterThan(min);
                 }
 
                 {
-                    let random = RandomIntegerFromObject({minimum: 50, maximum: val2, inclusive: false});
+                    let random = RandomIntegerFromObject({minimum: min, maximum: val2, inclusive: false});
                     expect(random).toBeLessThan(val2);
-                    expect(random).toBeGreaterThan(50);
+                    expect(random).toBeGreaterThan(min);
                 }
             });
         });

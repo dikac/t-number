@@ -5,21 +5,24 @@ it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
 describe(`iterative`,function() {
 
-    for(let i = 1; i <= 100; i++) {
+    const min = -50;
+    const max = 50;
+
+    for(let i = min; i <= max; i++) {
 
         describe(`inclusive`,function() {
 
-            it(`result 0 - ${i}`, () => {
+            it(`result ${min - 1} - ${i}`, () => {
 
                 {
-                    let random = RandomFloat(0, i);
+                    let random = RandomFloat(min - 1, i);
                     expect(random).toBeLessThanOrEqual(i);
-                    expect(random).toBeGreaterThanOrEqual(0);
+                    expect(random).toBeGreaterThanOrEqual(min - 1);
                 }
                 {
-                    let random = RandomFloatFromObject({minimum:0, maximum:i});
+                    let random = RandomFloatFromObject({minimum:min - 1, maximum:i});
                     expect(random).toBeLessThanOrEqual(i);
-                    expect(random).toBeGreaterThanOrEqual(0);
+                    expect(random).toBeGreaterThanOrEqual(min - 1);
                 }
 
             });
@@ -27,14 +30,14 @@ describe(`iterative`,function() {
             it(`result 50 - ${i+50}`, () => {
 
                 {
-                    let random = RandomFloat(50, i + 50);
-                    expect(random).toBeLessThanOrEqual(i + 50);
-                    expect(random).toBeGreaterThanOrEqual(50);
+                    let random = RandomFloat(min, i + max);
+                    expect(random).toBeLessThanOrEqual(i + max);
+                    expect(random).toBeGreaterThanOrEqual(min);
                 }
                 {
-                    let random = RandomFloatFromObject({minimum:50, maximum:i + 50, inclusive : true});
-                    expect(random).toBeLessThanOrEqual(i + 50);
-                    expect(random).toBeGreaterThanOrEqual(50);
+                    let random = RandomFloatFromObject({minimum:min, maximum:i + max, inclusive : true});
+                    expect(random).toBeLessThanOrEqual(i + max);
+                    expect(random).toBeGreaterThanOrEqual(min);
                 }
             });
         });
@@ -43,34 +46,34 @@ describe(`iterative`,function() {
 
             let val1 = i + 1;
 
-            it(`result 0 - ${val1}`, () => {
+            it(`result ${min} - ${val1}`, () => {
 
                 {
-                    let random = RandomFloat(0, val1, false);
+                    let random = RandomFloat(min, val1, false);
                     expect(random).toBeLessThan(val1);
-                    expect(random).toBeGreaterThan(0);
+                    expect(random).toBeGreaterThan(min);
                 }
 
                 {
-                    let random = RandomFloatFromObject({minimum:0, maximum:val1, inclusive : false});
+                    let random = RandomFloatFromObject({minimum:min, maximum:val1, inclusive : false});
                     expect(random).toBeLessThan(val1);
-                    expect(random).toBeGreaterThan(0);
+                    expect(random).toBeGreaterThan(min);
                 }
 
             });
 
             let val2 = i + 51;
-            it(`result 50 - ${val2}`, () => {
+            it(`result ${min} - ${val2}`, () => {
 
                 {
-                    let random = RandomFloat(50, val2, false);
+                    let random = RandomFloat(min, val2, false);
                     expect(random).toBeLessThan(val2);
-                    expect(random).toBeGreaterThan(50);
+                    expect(random).toBeGreaterThan(min);
                 }
                 {
-                    let random = RandomFloatFromObject({minimum:50, maximum:val2, inclusive : false});
+                    let random = RandomFloatFromObject({minimum:min, maximum:val2, inclusive : false});
                     expect(random).toBeLessThan(val2);
-                    expect(random).toBeGreaterThan(50);
+                    expect(random).toBeGreaterThan(min);
                 }
 
             });
