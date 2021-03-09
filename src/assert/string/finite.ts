@@ -13,7 +13,7 @@ export default function Finite(
 
     if(!valid) {
 
-        sentence.actual.push('actual', `"${value.toString()}"`);
+        sentence.actual.push('actual', `"${value}"`);
     }
 
     return sentence.message;

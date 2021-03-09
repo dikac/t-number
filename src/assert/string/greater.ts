@@ -31,9 +31,9 @@ export default function Greater(
         sentence.expect.push(`or equal`);
     }
 
-    sentence.expect.push('than', `"${minimum.toString()}"`);
+    sentence.expect.push('than', `"${minimum}"`);
 
-    sentence.actual.push('actual', `"${value.toString()}"`)
+    sentence.actual.push('actual', `"${value}"`)
 
     return sentence.message;
 }

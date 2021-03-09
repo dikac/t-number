@@ -4,7 +4,7 @@ export default function Nan(valid, value, subject = '') {
     sentence.expect = ['NaN'];
     sentence.comma.push('expect');
     if (!valid) {
-        sentence.actual.push('actual', `"${value.toString()}"`);
+        sentence.actual.push('actual', `"${value}"`);
     }
     return sentence.message;
 }

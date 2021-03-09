@@ -4,7 +4,7 @@ export default function Positive(valid, value, subject = '') {
     sentence.expect = ['positive number'];
     sentence.comma.push('expect');
     if (!valid) {
-        sentence.actual.push('actual', `"${value.toString()}"`);
+        sentence.actual.push('actual', `"${value}"`);
     }
     return sentence.message;
 }

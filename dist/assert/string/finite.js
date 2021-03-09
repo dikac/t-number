@@ -4,7 +4,7 @@ export default function Finite(valid, value, subject = '') {
     sentence.expect = ['finite number'];
     sentence.comma.push('expect');
     if (!valid) {
-        sentence.actual.push('actual', `"${value.toString()}"`);
+        sentence.actual.push('actual', `"${value}"`);
     }
     return sentence.message;
 }

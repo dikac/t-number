@@ -4,7 +4,7 @@ export default function Negative(valid, value, subject = '') {
     sentence.expect = ['negative number'];
     sentence.comma.push('expect');
     if (!valid) {
-        sentence.actual.push('actual', `"${value.toString()}"`);
+        sentence.actual.push('actual', `"${value}"`);
     }
     return sentence.message;
 }

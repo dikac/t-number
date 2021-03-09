@@ -4,7 +4,7 @@ export default function Integer(valid, value, subject = '') {
     sentence.expect = ['integer number'];
     sentence.comma.push('expect');
     if (!valid) {
-        sentence.actual.push('actual', `"${value.toString()}"`);
+        sentence.actual.push('actual', `"${value}"`);
     }
     return sentence.message;
 }

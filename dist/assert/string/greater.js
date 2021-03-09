@@ -15,8 +15,8 @@ export default function Greater(valid, value, minimum, inclusive, subject = 'num
     if (inclusive) {
         sentence.expect.push(`or equal`);
     }
-    sentence.expect.push('than', `"${minimum.toString()}"`);
-    sentence.actual.push('actual', `"${value.toString()}"`);
+    sentence.expect.push('than', `"${minimum}"`);
+    sentence.actual.push('actual', `"${value}"`);
     return sentence.message;
 }
 //# sourceMappingURL=greater.js.map

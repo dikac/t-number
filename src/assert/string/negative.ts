@@ -14,7 +14,7 @@ export default function Negative(
 
     if(!valid) {
 
-        sentence.actual.push('actual', `"${value.toString()}"`);
+        sentence.actual.push('actual', `"${value}"`);
     }
 
     return sentence.message;

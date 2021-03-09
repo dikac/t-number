@@ -4,7 +4,7 @@ export default function Infinite(valid, value, subject = '') {
     sentence.expect = ['infinite number'];
     sentence.comma.push('expect');
     if (!valid) {
-        sentence.actual.push('actual', `"${value.toString()}"`);
+        sentence.actual.push('actual', `"${value}"`);
     }
     return sentence.message;
 }
