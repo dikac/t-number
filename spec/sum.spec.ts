@@ -17,5 +17,6 @@ it(`1`,() => {
 it(`0`,() => {
 
     expect(Sum()).toEqual(0);
+    expect(Sum(...[])).toEqual(0);
 
 });
